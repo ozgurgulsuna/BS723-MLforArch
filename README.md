@@ -2,6 +2,10 @@
 #### 2022-2023 | Middle East Technical University
 #### [http://dds.archweb.metu.edu.tr/](http://dds.archweb.metu.edu.tr/)
 
-![BS723](http://dds.archweb.metu.edu.tr/wp-content/uploads/2023/02/banners-17-1440x1462.jpg)
+<div style="text-align:center">
+<img src="http://dds.archweb.metu.edu.tr/wp-content/uploads/2023/02/banners-17-1440x1462.jpg" alt="BS723" width=50%>
+</div>
+
+
 
 
