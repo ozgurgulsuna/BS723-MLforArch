@@ -1,3 +1,4 @@
+# Assignment 2: Weather Data Analysis
 Analyze the weather data of Ankara for March, 2023.
 
 You need to create:
@@ -16,7 +17,8 @@ Determine relevant:
 - Correlation factor
 
 
- ### Contents
+ ## Contents
+ -----
 
 - Time series of weather temperature for the hottest/coldest/average day of the month. [x]
 - Bar graph of the precipitation and cloud coverage for the month. [x]
@@ -25,7 +27,10 @@ Determine relevant:
 - Scatter graph of temperature vs hummidity sum for the month. [x]
 - Bar graph of the day and night temperature for the month. [o]
 
-** All data is from: https://open-meteo.com/en/docs/historical-weather-api
+** All data is from: https://open-meteo.com/en/docs/historical-weather-api **
+
+## Results
+ -----
 
 <p align="center">
     <img src='Figure_1.svg' alt='Fig1'>
