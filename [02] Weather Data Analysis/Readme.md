@@ -27,13 +27,15 @@ Determine relevant:
 
 ** All data is from: https://open-meteo.com/en/docs/historical-weather-api
 
-![Fig.1](Figure_1.svg)
-![Fig.2](Figure_2.svg)
-![Fig.3](Figure_3.svg)
-![Fig.4](Figure_4.svg)
-![Fig.5](Figure_5.svg)
-![Fig.6](Figure_6.svg)
-![Fig.7](Figure_7.svg)
+<p align="center">
+    <img src='Figure_1.svg' alt='Fig1'>
+    <img src='Figure_2.svg' alt='Fig2'>
+    <img src='Figure_3.svg' alt='Fig3'>
+    <img src='Figure_4.svg' alt='Fig4'>
+    <img src='Figure_5.svg' alt='Fig5'>
+    <img src='Figure_6.svg' alt='Fig6'>
+    <img src='Figure_7.svg' alt='Fig7'>   
+<p>
 
 
 
