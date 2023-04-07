@@ -28,8 +28,9 @@ Determine relevant:
 - Bar graph of the day and night temperature for the month. [o]
 
 ** All data is from: https://open-meteo.com/en/docs/historical-weather-api **
+** Extra plotting source: https://datavizcatalogue.com/index.html **
 
-## Results
+## Plots
  -----
 
 <p align="center">
