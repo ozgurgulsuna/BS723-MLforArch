@@ -7,11 +7,41 @@
 ### chaos theory
 ![chaos theory](references/chaos-theory.png)
 
+### papers - order of importance
+- https://sprott.physics.wisc.edu/pubs/paper532.pdf
+
+
+### analog implementation - future work
+- http://holdenc.altervista.org/chua/
+- https://en.wikipedia.org/wiki/Chua's_circuit
+- https://www.youtube.com/watch?v=DFKm0K5O7ak
+
+
+
+### books
+* Chaos and Dynamical Systems by David Feldman
+* Exploring Chaos: Theory and Experiment by Brian Davies
+
+* Chaos: From Theory to Applications by A.A. Tsonis
+
+* Chaos and Fractals: An Elementary Introduction by David Feldman
+
+* Nonlinear Dynamics And Chaos by Tufillaro, Abbott, Reilly
+
+* Computers, pattern, chaos, and beauty: Graphics from an unseen world by Clifford Pickover
+
+* A First Course In Chaotic Dynamical Systems by Robert Devaney
+
 ### resources
+- http://pystrange.jupiter-online.net/
+- https://github.com/simrit1/attractors
 - https://syntopia.github.io/StrangeAttractors/
 - http://www.chaoscope.org/doc/attractors.htm#chaotic_flow
 - https://piellardj.github.io/strange-attractors-webgl/
 - http://paulbourke.net/fractals/
+- http://www.3d-meier.de/tut19/Seite300.html
+- https://sprott.physics.wisc.edu/PUBS.HTM
+- https://sprott.physics.wisc.edu/fractals/
 
 
 
