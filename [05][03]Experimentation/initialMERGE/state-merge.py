@@ -106,7 +106,7 @@ def YuWang(state, t):
 #         return a1*(y-x), b1*x-c1*x*z, np.exp(x*y)-d1*z
     
 
-def Merge(state,t):
+def myTSUCS1(state,t):
     # x,y,z = state
     x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 
@@ -118,20 +118,39 @@ def Merge(state,t):
     y = dy*dt+y
     z = dz*dt+z
 
-
     x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
     return x,y,z
-
-    # else:
-    #     x,y,z = Expand(state, (136.0415254952852+1,133.11375168220457+1,82.92317366334211+1), (-0.1295158319772156,0.29621079126825123,66.55649794351987))
-
-    #     x = a1*(y-x)
-    #     y = b1*x-c1*x*z
-    #     z = np.exp(x*y)-d1*z
-
-    #     x,y,z = Normalize((x,y,z), (136.0415254952852+1,133.11375168220457+1,82.92317366334211+1), (-0.1295158319772156,0.29621079126825123,66.55649794351987))
-    #     return a1*(y/10-x/10), b1*x/10-c1*x/10*z/10, np.exp(x*y/100)-d1*z/10
     
+def Merge(state,t):
+    x,y,z = state 
+    if x>0 and y>0 and z>0:
+        x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+
+        dx = (a * (y - x) + d * x * z)
+        dy = (f * y - x * z)
+        dz = (c * z + x * y - e * x**2)
+
+        x = dx*dt+x
+        y = dy*dt+y
+        z = dz*dt+z
+
+        x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+        return x,y,z
+    else:
+        x,y,z = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+        
+        dx = a1*(y-x)
+        dy = b1*x-c1*x*z
+        dz = np.exp(x*y)-d1*z
+
+        x = dx*dt+x
+        y = dy*dt+y
+        z = dz*dt+z
+
+        x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+        return x,y,z       
+
+
 # def Merge(state,t):
 #     x, y, z = state
 #     if (x > 0) :
@@ -152,10 +171,11 @@ def mysolver(system, state, t):
     return output
 
 
-myTSUCS1 = mysolver(Merge, (x0, y0, z0), t)
+myTSUCS1 = mysolver(myTSUCS1, (x0, y0, z0), t)
 myTSUCS1 = np.delete(myTSUCS1, 0, 0)
 
-
+myMerger = mysolver(Merge, (x0, y0, z0), t)
+myMerger = np.delete(myMerger, 0, 0)
 
 
 #----------------------------------------------------------#
@@ -172,32 +192,28 @@ Merge = odeint(Merge, (x0, y0, z0), t)
 
 # Plot the system
 
-print("Plotting the system...")
-plt.figure()
-ax = plt.axes(projection='3d')
+# print("Plotting the system...")
+# plt.figure()
+# ax = plt.axes(projection='3d')
 
-ax.plot3D(TSUCS1[:, 0], TSUCS1[:, 1], TSUCS1[:, 2])
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('z')
-plt.show()
+# ax.plot3D(TSUCS1[:, 0], TSUCS1[:, 1], TSUCS1[:, 2])
+# ax.set_xlabel('x')
+# ax.set_ylabel('y')
+# ax.set_zlabel('z')
+# plt.show()
 
 #----------------------------------------------------------#
 
 # Yu-Wang Attractor
 
-#----------------------------------------------------------#
+plt.figure()
+ax = plt.axes(projection='3d')
 
-# Plot the system
-
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(YuWang[:, 0], YuWang[:, 1], YuWang[:, 2])
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
+ax.plot3D(YuWang[:, 0], YuWang[:, 1], YuWang[:, 2])
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+plt.show()
 
 #----------------------------------------------------------#
 
@@ -217,11 +233,26 @@ plt.show()
 #----------------------------------------------------------#
 
 # Plot the system
+# print("Plotting the system...")
+# plt.figure()
+# ax = plt.axes(projection='3d')
+
+# ax.plot3D(myTSUCS1[:, 0], myTSUCS1[:, 1], myTSUCS1[:, 2])
+# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
+# ax.set_xlabel('x')
+# ax.set_ylabel('y')
+# ax.set_zlabel('z')
+# plt.show()
+
+#----------------------------------------------------------#
+
+
+# Plot the system
 print("Plotting the system...")
 plt.figure()
 ax = plt.axes(projection='3d')
 
-ax.plot3D(myTSUCS1[:, 0], myTSUCS1[:, 1], myTSUCS1[:, 2])
+ax.plot3D(myMerger[:, 0], myMerger[:, 1], myMerger[:, 2])
 # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
 ax.set_xlabel('x')
 ax.set_ylabel('y')
@@ -229,8 +260,6 @@ ax.set_zlabel('z')
 plt.show()
 
 #----------------------------------------------------------#
-
-
 
 
 
