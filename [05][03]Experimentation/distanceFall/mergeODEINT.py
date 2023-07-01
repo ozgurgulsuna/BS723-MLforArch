@@ -1,5 +1,4 @@
 
-
 # to be installed
 
 # pip install scipy
@@ -52,8 +51,8 @@ def Expand(state, scale, offset):
 
 
 # solver = 'euler'
-dt = 0.001
-t = np.arange(0, dt*10000, dt)
+dt = 0.0005
+t = np.arange(0, dt*75000, dt)
 
 #----------------------------------------------------------#
 # TSUCS 1 Attractor (Three-Scroll Unified Chaotic System)
@@ -150,57 +149,53 @@ def myTSUCS1(state,t):
 
 print(a,b,c,d)
 def Merge(state,t):
-    x,y,z = state 
-   
+    x_0,y_0,z_0 = state 
+
+    dist = distance((a,b,c,d),(x_0,y_0,z_0))
+    fall = falloff(dist)
+
+
+    x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+
+    x = (40 * (y - x) + 0.5 * x * z)*dt +x
+    y = (20 * y - x * z)*dt +y
+    z = (0.833 * z + x * y - 0.65 * x**2)*dt +z
+    #  print(dx,dy,dz)
+    
+    x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+
+    dx_a = (x-x_0)/dt
+    dy_a = (y-y_0)/dt
+    dz_a = (z-z_0)/dt
+
+    x,y,z = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+
+    x = (a1*(y-x))*dt +x
+    y = (b1*x-c1*x*z)*dt +y
+    z = (np.exp(x*y)-d1*z)*dt +z
+    #  print(dx,dy,dz)
+
+    x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+
+    dx_b = (x-x_0)/dt
+    dy_b = (y-y_0)/dt
+    dz_b = (z-z_0)/dt
+
     if (a*x+b*y+c*z+d < 0):
-        dist = distance((a,b,c,d),(x,y,z))
-        fall = falloff(dist)
 
-        x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-        x_b,y_b,z_b = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+        dx=dx_a*fall+dx_b*(1-fall)
+        dy=dy_a*fall+dy_b*(1-fall)
+        dz=dz_a*fall+dz_b*(1-fall)
 
+        return dx,dy,dz
 
-        dx = (40 * (y - x) + 0.5 * x * z)
-        dy = (20 * y - x * z)
-        dz = (0.833 * z + x * y - 0.65 * x**2)
-
-        dx_b = a1*(y_b-x_b)
-        dy_b = b1*x_b-c1*x_b*z_b
-        dz_b = np.exp(x_b*y_b)-d1*z_b
- 
-        x = dx*dt+x
-        y = dy*dt+y
-        z = dz*dt+z
-
-        x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-        
-        x_b,y_b,z_b = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
-        
-        dx_b = a1*(y_b-x_b)
-        dy_b = b1*x_b-c1*x_b*z_b
-        dz_b = np.exp(x_b*y_b)-d1*z_b
-
-        x = dx*dt+x
-        y = dy*dt+y
-        z = dz*dt+z
-
-        x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
-        
-        
-        return x,y,z
     else:
-        x,y,z = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
-        
-        dx = a1*(y-x)
-        dy = b1*x-c1*x*z
-        dz = np.exp(x*y)-d1*z
 
-        x = dx*dt+x
-        y = dy*dt+y
-        z = dz*dt+z
+        dx=dx_a*(1-fall)+dx_b*fall
+        dy=dy_a*(1-fall)+dy_b*fall
+        dz=dz_a*(1-fall)+dz_b*fall
 
-        x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
-        return x,y,z       
+        return dx,dy,dz     
 
 
 
@@ -243,7 +238,7 @@ def mysolver(system, state, t):
 
 #----------------------------------------------------------#
 # Solve the systems
-TSUCS1 = odeint(myTSUCS1, (x0, y0, z0), t)
+TSUCS1 = odeint(Merge, (x0, y0, z0), t)
 
 YuWang = odeint(YuWang, (x1, y1, z1), t)
 
