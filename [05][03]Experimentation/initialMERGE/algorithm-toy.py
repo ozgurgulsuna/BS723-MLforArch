@@ -61,8 +61,21 @@ t = np.arange(0, dt*10000, dt)
 
 
 x0,y0,z0 = Normalize((0.1,0.1,0.1),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-x1,y1,z1 = Normalize((np.random.rand()*0.3,np.random.rand()*0.3,np.random.rand()*0.3),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-x2,y2,z2 = Normalize((np.random.rand()*0.3,np.random.rand()*0.3,np.random.rand()*0.3),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+x1,y1,z1 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+x2,y2,z2 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+x0,y0,z0 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052),  (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+
+
+sp1=np.random.rand()*100-50
+sp2=np.random.rand()*100-50
+off3 = np.random.rand()-0.5
+
+
+sp1=-13.383584125755775
+sp2=7.753965912068551
+off3 = 0.2936950556786103
+
+  
 
 # Parameters
 a = 40
@@ -116,10 +129,12 @@ def myTSUCS1(state,t):
 
     x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
     return x,y,z
-    
+
+print(sp1, sp2, off3)   
 def Merge(state,t):
     x,y,z = state 
-    if x<0.1 and x>-0.25 :
+   
+    if (sp1*x+ sp2*y + off3 < 0):
         x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 
         dx = (a * (y - x) + d * x * z)
@@ -145,6 +160,7 @@ def Merge(state,t):
 
         x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
         return x,y,z       
+
 
 
 # def Merge(state,t):
@@ -256,8 +272,8 @@ plt.figure()
 ax = plt.axes(projection='3d')
 
 ax.plot3D(myMerger[:, 0], myMerger[:, 1], myMerger[:, 2])
-# ax.plot3D(myMerger1[:, 0], myMerger1[:, 1], myMerger1[:, 2], color="green")
-# ax.plot3D(myMerger2[:, 0], myMerger2[:, 1], myMerger2[:, 2], color="red")
+ax.plot3D(myMerger1[:, 0], myMerger1[:, 1], myMerger1[:, 2], color="green")
+ax.plot3D(myMerger2[:, 0], myMerger2[:, 1], myMerger2[:, 2], color="red")
 # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
 ax.set_xlabel('x')
 ax.set_ylabel('y')
