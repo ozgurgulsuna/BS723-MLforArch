@@ -72,6 +72,9 @@ c=(np.random.rand()-0.5)*50
 d=np.random.rand()-0.5
 
 
+# -10.43398473577835 5.158585164422503 8.645204095778958 0.3655579390117417
+
+
 
 # sp1=-13.383584125755775
 # sp2=7.753965912068551
@@ -107,7 +110,7 @@ def distance(plane, point):
     a,b,c,d = plane
     x,y,z = point
     return abs(a*x+b*y+c*z+d)/np.sqrt(a**2+b**2+c**2)
-    
+
 
 
 
@@ -130,82 +133,73 @@ def YuWang(state, t):
     
 
 def myTSUCS1(state,t):
-    x_1,y_1,z_1 = state
+    x_0,y_0,z_0 = state
     x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 
-    dx = (40 * (y - x) + 0.5 * x * z)
-    dy = (20 * y - x * z)
-    dz = (0.833 * z + x * y - 0.65 * x**2)
+    x = (40 * (y - x) + 0.5 * x * z)*dt +x
+    y = (20 * y - x * z)*dt +y
+    z = (0.833 * z + x * y - 0.65 * x**2)*dt +z
+    #  print(dx,dy,dz)
+    x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 
+    dx = (x-x_0)/dt
+    dy = (y-y_0)/dt
+    dz = (z-z_0)/dt
 
-
-    dx,dy,dz = Normalize((dx,dy,dz),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-
-    x = dx*dt+x_1
-    y = dy*dt+y_1
-    z = dz*dt+z_1
-    return x,y,z
+    return dx,dy,dz
 
 print(a,b,c,d)
-
 def Merge(state,t):
     x,y,z = state 
-    # if (a*x+b*y+c*z+d < 0):   
-    if 1:
-        
+   
+    if (a*x+b*y+c*z+d < 0):
         dist = distance((a,b,c,d),(x,y,z))
-
-        dist = 1000
         fall = falloff(dist)
 
-        x_a,y_a,z_a = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+        x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
         x_b,y_b,z_b = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
 
-        dx_a = (40 * (y_a - x_a) + 0.5 * x_a * z_a)*dt
-        dy_a = (20 * y_a - x_a * z_a)*dt
-        dz_a = (0.833 * z_a + x_a * y_a - 0.65 * (x_a)**2)*dt
 
-        dx_b = (a1*(y_b-x_b))*dt
-        dy_b = (b1*x_b-c1*x_b*z_b)*dt
-        dz_b = (np.exp(x_b*y_b)-d1*z_b)*dt
+        dx = (40 * (y - x) + 0.5 * x * z)
+        dy = (20 * y - x * z)
+        dz = (0.833 * z + x * y - 0.65 * x**2)
 
-        x = dx_a+x
-        y = dy_a+y
-        z = dz_a+z
+        dx_b = a1*(y_b-x_b)
+        dy_b = b1*x_b-c1*x_b*z_b
+        dz_b = np.exp(x_b*y_b)-d1*z_b
+ 
+        x = dx*dt+x
+        y = dy*dt+y
+        z = dz*dt+z
 
-        x,y,z= Normalize((x,y,x),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-        dx_b,dy_b,dz_b = Normalize((dx_b,dy_b,dz_b), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+        x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
+        
+        x_b,y_b,z_b = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+        
+        dx_b = a1*(y_b-x_b)
+        dy_b = b1*x_b-c1*x_b*z_b
+        dz_b = np.exp(x_b*y_b)-d1*z_b
 
+        x = dx*dt+x
+        y = dy*dt+y
+        z = dz*dt+z
 
-        # x = dx_a+dx_b*fall+x
-        # y = dy_a+dy_b*fall+y
-        # z = dz_a+dz_b*fall+z
-
-
+        x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
+        
         
         return x,y,z
     else:
-        dist = distance((a,b,c,d),(x,y,z))
-        fall = falloff(dist)
-
-        x_a,y_a,z_a = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-        x_b,y_b,z_b = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
-
-        dx_a = (40 * (y_a - x_a) + 0.5 * x_a * z_a)*dt
-        dy_a = (20 * y_a - x_a * z_a)*dt
-        dz_a = (0.833 * z_a + x_a * y_a - 0.65 * (x_a)**2)*dt
-
-        dx_b = (a1*(y_b-x_b))*dt
-        dy_b = (b1*x_b-c1*x_b*z_b)*dt
-        dz_b = (np.exp(x_b*y_b)-d1*z_b)*dt
-
-        dx_a,dy_a,dz_a = Normalize((dx_a,dy_a,dz_a),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-        dx_b,dy_b,dz_b = Normalize((dx_b,dy_b,dz_b), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
-
-        x = dx_a*fall+dx_b+x
-        y = dy_a*fall+dy_b+y
-        z = dz_a*fall+dz_b+z
+        x,y,z = Expand(state, (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
         
+        dx = a1*(y-x)
+        dy = b1*x-c1*x*z
+        dz = np.exp(x*y)-d1*z
+
+        x = dx*dt+x
+        y = dy*dt+y
+        z = dz*dt+z
+
+        x,y,z = Normalize((x,y,z), (4.399089600367304,8.252102382380636,57.14753811199316), (0.016690981504353886,0.21957693624264607,28.57376905599658))
         return x,y,z       
 
 
@@ -223,7 +217,10 @@ def mysolver(system, state, t):
     x, y, z = state
     output = np.empty((1,3))
     for i in range(len(t)):
-        x, y, z = system((x, y, z), t[i])
+        dx, dy, dz = system((x, y, z), t[i])
+        x = dx + x
+        y = dy + y
+        z = dz + z
         output = np.append(output, [[x,y,z]], axis=0)
         # print(x,y,z)
 
@@ -233,8 +230,8 @@ def mysolver(system, state, t):
 # myTSUCS1 = mysolver(myTSUCS1, (x0, y0, z0), t)
 # myTSUCS1 = np.delete(myTSUCS1, 0, 0)
 
-myMerger = mysolver(myTSUCS1, (x0, y0, z0), t)
-myMerger = np.delete(myMerger, 0, 0)
+# myMerger = mysolver(Merge, (x0, y0, z0), t)
+# myMerger = np.delete(myMerger, 0, 0)
 
 # myMerger1 = mysolver(Merge, (x1, y1, z1), t)
 # myMerger1 = np.delete(myMerger1, 0, 0)
@@ -246,7 +243,7 @@ myMerger = np.delete(myMerger, 0, 0)
 
 #----------------------------------------------------------#
 # Solve the systems
-TSUCS1 = odeint(TSUCS1, (x0, y0, z0), t)
+TSUCS1 = odeint(myTSUCS1, (x0, y0, z0), t)
 
 YuWang = odeint(YuWang, (x1, y1, z1), t)
 
@@ -258,15 +255,15 @@ Merge = odeint(Merge, (x0, y0, z0), t)
 
 # Plot the system
 
-# print("Plotting the system...")
-# plt.figure()
-# ax = plt.axes(projection='3d')
+print("Plotting the system...")
+plt.figure()
+ax = plt.axes(projection='3d')
 
-# ax.plot3D(TSUCS1[:, 0], TSUCS1[:, 1], TSUCS1[:, 2])
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
+ax.plot3D(TSUCS1[:, 0], TSUCS1[:, 1], TSUCS1[:, 2])
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+plt.show()
 
 #----------------------------------------------------------#
 
@@ -314,18 +311,18 @@ Merge = odeint(Merge, (x0, y0, z0), t)
 
 
 # Plot the system
-print("Plotting the system...")
-plt.figure()
-ax = plt.axes(projection='3d')
+# print("Plotting the system...")
+# plt.figure()
+# ax = plt.axes(projection='3d')
 
-ax.plot3D(myMerger[:, 0], myMerger[:, 1], myMerger[:, 2])
+# ax.plot3D(myMerger[:, 0], myMerger[:, 1], myMerger[:, 2])
 # ax.plot3D(myMerger1[:, 0], myMerger1[:, 1], myMerger1[:, 2], color="green")
 # ax.plot3D(myMerger2[:, 0], myMerger2[:, 1], myMerger2[:, 2], color="red")
-# ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('z')
-plt.show()
+# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
+# ax.set_xlabel('x')
+# ax.set_ylabel('y')
+# ax.set_zlabel('z')
+# plt.show()
 
 #----------------------------------------------------------#
 
