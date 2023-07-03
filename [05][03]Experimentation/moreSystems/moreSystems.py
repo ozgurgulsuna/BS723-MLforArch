@@ -1,16 +1,29 @@
+#==============================================================================================================================#
+#                                                                                                                              #
+#                                            C O N T I N U O U S   M E R G I N G                                               #
+#                                            S T R A N G E   A T T R A C T O R S                                               #   
+#                                                                                                                              #                                 
+#       Author: ozgurgulsuna                                                                                                   #                                                                            |
+#       Date: 02.07.2023                                                                                                       #                            
+#                                                                                                                              # 
+#       Description:                                                                                                           #
+#         This code implements a continuous merging technique for strange attractors, inspired by the mesmerizing              #
+#         patterns found in chaotic systems. The algorithm blends multiple attractors together, resulting in intricate         #
+#         visual representations. This project aims to explore the beauty of chaos and the complex dynamics of                 #
+#         nonlinear systems.                                                                                                   #
+#                                                                                                                              #   
+#==============================================================================================================================#
+
+# Imports =====================================================================================================================#
+
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.integrate import odeint
 
-#----------------------------------------------------------#
-# 1. TSUCS 1 Attractor (Three-Scroll Unified Chaotic System)
-# 2. Yu-Wang Attractor
-#----------------------------------------------------------#
-
-#----------------------------------------------------------#
-# Define Transformations
+# Transformations =============================================================================================================#
 
 def Normalize(state, scale, offset):
+    # Normalize the point to the unit cube
     x, y, z = state
     scale_x, scale_y, scale_z = scale
     offset_x, offset_y, offset_z = offset
@@ -26,6 +39,7 @@ def Normalize(state, scale, offset):
     return x,y,z
 
 def Expand(state, scale, offset):
+    # Expand the point to the original scale
     x, y, z = state
     scale_x, scale_y, scale_z = scale
     offset_x, offset_y, offset_z = offset
@@ -40,14 +54,14 @@ def Expand(state, scale, offset):
 
     return x,y,z
 
-dt = 0.0005
-t = np.arange(0, dt*75000, dt)
+# Parameters ==================================================================================================================#
 
-#----------------------------------------------------------#
-# TSUCS 1 Attractor (Three-Scroll Unified Chaotic System)
-# Initial values
+dt = 0.001
+t = np.arange(0, dt*75000*2, dt)
 
 
+
+# Initial conditions ==========================================================================================================#
 x0,y0,z0 = Normalize((0.1,0.1,0.1),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 x1,y1,z1 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 x2,y2,z2 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
@@ -236,7 +250,23 @@ ax.set_ylabel('y')
 ax.set_zlabel('z')
 plt.show()
 
-#----------------------------------------------------------#
+#
+#       _____                _____            __  __  __
+#      /\    \              /\    \          /\ \/ / /\ \
+#     /::\    \            /::\____\        /::\  / /  \ \
+#    /::::\    \          /:::/    /       /:/\:\/ /    \ \
+#   /::::::\    \        /:::/    /       /:/  \:\_\____\ \
+#  /:::/\:::\    \      /:::/    /       /:/    \:\/___/ \
+# /:::/  \:::\    \    /:::/    /       /:/     \:\__\   _
+# \::/    \:::\    \  /:::/    /       /:/      \/__/  /\ \
+#  \/____/ \:::\    \/:::/    /        \/_____/      /::\ \
+#           \:::\____\/:::/    /                      /:/\:\ \
+#            \::/    /\::/    /                      /:/__\:\ \
+#             \/____/  \/____/                       \:\   \:\ \
+#                                                      \:\   \:\ \
+#                                                       \:\   \:\_\
+#                                                        \:\__\::/
+#                                                         \/__\:/ 
 
 
 
