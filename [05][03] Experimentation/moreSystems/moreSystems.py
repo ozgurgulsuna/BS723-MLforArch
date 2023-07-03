@@ -60,12 +60,16 @@ def Expand(state, scale, offset):
 # Parameters ==================================================================================================================#
 
 dt = 0.001
-t = np.arange(0, dt*10000, dt)
+t = np.arange(0, dt*50000, dt)
 
 # Read Data ===================================================================================================================#
 
-system_A = "Lorenz"
+system_A = "Halvorsen"
 system_B = "YuWang"
+
+single = 0
+smooth = True
+portal_plane = False
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/moreSystems/chaotic_attractors.json"
 # filename = "chaotic_attractors.json"
@@ -73,13 +77,14 @@ filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/moreSystems/c
 with open(filename, 'r') as read_file:
     data = json.load(read_file)
 
-scale_A = data[system_A]["scale"]
-offset_A = data[system_A]["offset"]
+scale_A = data[system_A]["scale"][:3]
+offset_A = data[system_A]["offset"][:3]
 
-scale_B = data[system_B]["scale"]
-offset_B = data[system_B]["offset"]
+scale_B = data[system_B]["scale"][:3]
+offset_B = data[system_B]["offset"][:3]
 
 model_A = eval(system_A+"()")
+model_B = eval(system_B+"()")
 
 
 
@@ -99,11 +104,15 @@ b=(np.random.rand()-0.5)*50
 c=(np.random.rand()-0.5)*50
 d=np.random.rand()-0.5
 
-a = -1.515980368201647
-b= -21.35202216446338
-c = -5.822262341841345
-d = 0.36183045383970425
+# a = -1.515980368201647
+# b= -21.35202216446338
+# c = -5.822262341841345
+# d = 0.36183045383970425
 
+a = -17.789229828346574
+b = -24.07603117506562
+c = 14.345434996525968
+d = 0.34105428120779835
 
 #----------------------------------------------------------#
 # Falloff function
@@ -117,9 +126,9 @@ def distance(plane, point):
 
 
 # Define the systems
-def TSUCS1(state, t):
-    x, y, z = state
-    return 40 * (y - x) + 0.5 * x * z, 20 * y - x * z , 0.833 * z + x * y - 0.65 * x**2
+# def TSUCS1(state, t):
+#     x, y, z = state
+#     return 40 * (y - x) + 0.5 * x * z, 20 * y - x * z , 0.833 * z + x * y - 0.65 * x**2
 
 
 # def YuWang(state, t):
@@ -127,23 +136,8 @@ def TSUCS1(state, t):
 #     return 10*(y-x), 40*x-2*x*z, np.exp(x*y)-2.5*z
   
 
-# def myTSUCS1(state,t):
-#     x_0,y_0,z_0 = state
-#     x,y,z = Expand(state, (136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-
-#     x = (40 * (y - x) + 0.5 * x * z)*dt +x
-#     y = (20 * y - x * z)*dt +y
-#     z = (0.833 * z + x * y - 0.65 * x**2)*dt +z
-
-#     x,y,z = Normalize((x,y,z),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-
-#     dx = (x-x_0)/dt
-#     dy = (y-y_0)/dt
-#     dz = (z-z_0)/dt
-
-#     return dx,dy,dz
-
 print(a,b,c,d)
+
 def Merge(state,t):
     x_0,y_0,z_0 = state 
 
@@ -210,24 +204,87 @@ def single_system(state,t):
     dy = (y-y_0)/dt
     dz = (z-z_0)/dt
 
-    # print(dx,dy,dz)
     return dx,dy,dz  
+
+def merge(state,t):
+    x_0,y_0,z_0 = state 
+
+    dist = distance((a,b,c,d),(x_0,y_0,z_0))
+    fall = falloff(dist)
+
+    x,y,z = Expand(state, scale_A, offset_A)
+
+    dx,dy,dz = model_A.rhs(np.asarray([x,y,z]),0)[:3]
+
+    x = dx*dt +x
+    y = dy*dt +y
+    z = dz*dt +z
+
+    x,y,z = Normalize((x,y,z), scale_A, offset_A)
+                 
+    dx_a = (x-x_0)/dt
+    dy_a = (y-y_0)/dt
+    dz_a = (z-z_0)/dt
+
+    x,y,z = Expand(state, scale_B, offset_B)
+
+    dx,dy,dz = model_B.rhs(np.asarray([x,y,z]),0)[:3]
+
+    x = dx*dt +x
+    y = dy*dt +y
+    z = dz*dt +z
+
+    x,y,z = Normalize((x,y,z), scale_B, offset_B)
+                 
+    dx_b = (x-x_0)/dt
+    dy_b = (y-y_0)/dt
+    dz_b = (z-z_0)/dt
+
+    if (single!= 0):
+        if single == "A":
+            return dx_a, dy_a, dz_a
+        elif single == "B":
+            return dx_b, dy_b, dz_b
+
+    elif (a*x+b*y+c*z+d < 0):
+
+        if smooth:
+            dx=dx_a*fall+dx_b*(1-fall)
+            dy=dy_a*fall+dy_b*(1-fall)
+            dz=dz_a*fall+dz_b*(1-fall)
+        else:
+            dx=dx_a
+            dy=dy_a
+            dz=dz_a
+
+        return dx,dy,dz
+    
+
+    else:
+        if smooth:
+            dx=dx_a*(1-fall)+dx_b*fall
+            dy=dy_a*(1-fall)+dy_b*fall
+            dz=dz_a*(1-fall)+dz_b*fall
+        else:
+            dx=dx_b
+            dy=dy_b
+            dz=dz_b
+
+        return dx,dy,dz
+
 
 #----------------------------------------------------------#
 # Solve the systems
-TSUCS1 = odeint(TSUCS1, (x0, y0, z0), t)
 
-# YuWang = odeint(YuWang, (x1, y1, z1), t)
+# Merge1 = odeint(Merge, (x0, y0, z0), t)
 
-Merge1 = odeint(Merge, (x0, y0, z0), t)
+# Merge2 = odeint(Merge, (x1, y1, z1), t)
 
-Merge2 = odeint(Merge, (x1, y1, z1), t)
+# Merge3 = odeint(Merge, (x2, y2, z2), t)
 
-Merge3 = odeint(Merge, (x2, y2, z2), t)
+# singleass = odeint(single_system, (x0, y0, z0), t)
 
-print("anan")
-singleass = odeint(single_system, (x0, y0, z0), t)
-
+Merge4 = odeint(merge, (x0, y0, z0), t)
 # Merge2 = odeint(Merge, (x2, y2, z2), t)
 
 
@@ -290,33 +347,56 @@ singleass = odeint(single_system, (x0, y0, z0), t)
 #----------------------------------------------------------#
 
 
+# # Plot the system
+# print("Plotting the system...")
+# plt.figure()
+# ax = plt.axes(projection='3d')
+
+# ax.plot3D(Merge1[:, 0], Merge1[:, 1], Merge1[:, 2])
+# ax.plot3D(Merge3[:, 0], Merge3[:, 1], Merge3[:, 2], color="green")
+# ax.plot3D(Merge2[:, 0], Merge2[:, 1], Merge2[:, 2], color="red")
+# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
+# ax.set_xlabel('x')
+# ax.set_ylabel('y')
+# ax.set_zlabel('z')
+# plt.show()
+
+
+
+# # Plot the system
+# print("Plotting the system...")
+# plt.figure()
+# ax = plt.axes(projection='3d')
+
+# ax.plot3D(singleass[:, 0], singleass[:, 1], singleass[:, 2])
+# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
+# ax.set_xlabel('x')
+# ax.set_ylabel('y')
+# ax.set_zlabel('z')
+# plt.show()
+
 # Plot the system
 print("Plotting the system...")
 plt.figure()
 ax = plt.axes(projection='3d')
 
-ax.plot3D(Merge1[:, 0], Merge1[:, 1], Merge1[:, 2])
-ax.plot3D(Merge3[:, 0], Merge3[:, 1], Merge3[:, 2], color="green")
-ax.plot3D(Merge2[:, 0], Merge2[:, 1], Merge2[:, 2], color="red")
+if portal_plane:
+    x = np.linspace(-0.5, 0.5, 2)
+    y = np.linspace(-0.5, 0.5, 2)
+    x, y = np.meshgrid(x, y)
+    eq = -a*x/c - b*y/c  - d/c
+    ax.plot_surface(x, y, eq, alpha=0.2)
+
+
+
+ax.plot3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2])
+
 # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
 ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('z')
 plt.show()
 
-
-
-# Plot the system
-print("Plotting the system...")
-plt.figure()
-ax = plt.axes(projection='3d')
-
-ax.plot3D(singleass[:, 0], singleass[:, 1], singleass[:, 2])
-# ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('z')
-plt.show()
 
 #
 #       _____                _____            __  __  __
