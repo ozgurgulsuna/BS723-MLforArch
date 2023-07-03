@@ -60,12 +60,12 @@ def Expand(state, scale, offset):
 # Parameters ==================================================================================================================#
 
 dt = 0.001
-t = np.arange(0, dt*50000, dt)
+t = np.arange(0, dt*100000, dt)
 
 # Read Data ===================================================================================================================#
 
 system_A = "Halvorsen"
-system_B = "YuWang"
+system_B = "GenesioTesi"
 
 single = 0
 smooth = True
@@ -109,10 +109,16 @@ d=np.random.rand()-0.5
 # c = -5.822262341841345
 # d = 0.36183045383970425
 
-a = -17.789229828346574
-b = -24.07603117506562
-c = 14.345434996525968
-d = 0.34105428120779835
+# a = -17.789229828346574
+# b = -24.07603117506562
+# c = 14.345434996525968
+# d = 0.34105428120779835
+
+a = -3.714534137284764 
+b =14.632861553314914 
+c = 6.156366208046949 
+d = 0.01961998110523311
+
 
 #----------------------------------------------------------#
 # Falloff function
@@ -285,6 +291,9 @@ def merge(state,t):
 # singleass = odeint(single_system, (x0, y0, z0), t)
 
 Merge4 = odeint(merge, (x0, y0, z0), t)
+Merge5 = odeint(merge, (x1, y1, z1), t)
+Merge6 = odeint(merge, (x2, y2, z2), t)
+
 # Merge2 = odeint(Merge, (x2, y2, z2), t)
 
 
@@ -389,7 +398,9 @@ if portal_plane:
 
 
 
-ax.plot3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2])
+ax.plot3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2], color="black")
+ax.plot3D(Merge5[:, 0], Merge5[:, 1], Merge5[:, 2], color="lightslategray")
+ax.plot3D(Merge6[:, 0], Merge6[:, 1], Merge6[:, 2], color="darkslategray")
 
 # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
 ax.set_xlabel('x')
