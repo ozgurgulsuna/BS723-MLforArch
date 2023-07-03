@@ -69,7 +69,7 @@ system_B = "GenesioTesi"
 
 single = 0
 smooth = True
-portal_plane = False
+portal_plane = True
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/moreSystems/chaotic_attractors.json"
 # filename = "chaotic_attractors.json"
@@ -114,10 +114,15 @@ d=np.random.rand()-0.5
 # c = 14.345434996525968
 # d = 0.34105428120779835
 
-a = -3.714534137284764 
-b =14.632861553314914 
-c = 6.156366208046949 
-d = 0.01961998110523311
+# a = -3.714534137284764 
+# b =14.632861553314914 
+# c = 6.156366208046949 
+# d = 0.01961998110523311
+
+a = -17.674702003127702 
+b = 21.764906670550904
+c = -24.344549422173795
+d = 0.04872006514863636
 
 
 #----------------------------------------------------------#
