@@ -32,18 +32,7 @@
         },
         "period": 2.5837,
         "pesin_entropy": 0.10978427938362978,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.017703947880647886,
-            -0.10824444533568045,
-            0.7519379743611769
-        ],
-        "scale": [
-            2.82347142328653,
-            2.645124611287791,
-            2.114708729397011
-        ]
+        "unbounded_indices": []
     },
     "AnishchenkoAstakhov": {
         "bifurcation_parameter": null,
@@ -74,18 +63,7 @@
         },
         "period": 6.814,
         "pesin_entropy": 0.040715925817307534,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.1610634523889194,
-            2.611977581869936,
-            2.3232691038173856
-        ],
-        "scale": [
-            8.321449590903711,
-            9.023456700047197,
-            4.418842772687402
-        ]
+        "unbounded_indices": []
     },
     "Arneodo": {
         "bifurcation_parameter": null,
@@ -118,18 +96,7 @@
         },
         "period": 3.1641,
         "pesin_entropy": 0.2428749592514372,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.319485984691617,
-            1.03025981200769,
-            1.0798359725454905
-        ],
-        "scale": [
-            4.011519318148348,
-            6.761280599570189,
-            15.882602725963054
-        ]
+        "unbounded_indices": []
     },
     "ArnoldBeltramiChildress": {
         "bifurcation_parameter": null,
@@ -165,17 +132,6 @@
             0,
             1,
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            -3.1697526431395673e-07,
-            -1.6918808887989023e-05,
-            -6.468017934763148e-05
-        ],
-        "scale": [
-            1.9999992123790769,
-            1.9998847817407384,
-            1.999869397365857
         ]
     },
     "ArnoldWeb": {
@@ -215,21 +171,6 @@
             2,
             3,
             4
-        ],
-        "dimension": 5,
-        "offset": [
-            0.1084904795992758,
-            0.07530407359116306,
-            3.3838538013308828e-06,
-            -1.7174288065580079e-06,
-            -1.3258528874959818e-05
-        ],
-        "scale": [
-            0.03805429286333717,
-            0.039432648707729986,
-            1.999993147369017,
-            1.9999965439406164,
-            1.9943662568414222
         ]
     },
     "BeerRNN": {
@@ -286,18 +227,7 @@
         },
         "period": 181.58,
         "pesin_entropy": 0.01647451962951782,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            4.065412195850317,
-            2.711945606652255,
-            1.1044543676359388
-        ],
-        "scale": [
-            6.350120549871308,
-            1.5057780767723896,
-            2.296801635647015
-        ]
+        "unbounded_indices": []
     },
     "BelousovZhabotinsky": {
         "bifurcation_parameter": null,
@@ -347,18 +277,7 @@
         },
         "period": 0.018257,
         "pesin_entropy": 114.64513768787073,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.36644321154616144,
-            1.3135290929629098,
-            0.847936814267032
-        ],
-        "scale": [
-            0.716149853319554,
-            1.4176625769956246,
-            0.006040476376160453
-        ]
+        "unbounded_indices": []
     },
     "BickleyJet": {
         "bifurcation_parameter": null,
@@ -408,17 +327,6 @@
         "unbounded_indices": [
             1,
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            -0.9089243356822432,
-            1.2635168468722036e-06,
-            0.4999998420183592
-        ],
-        "scale": [
-            1.0591715466584382,
-            1.9999965993717286,
-            0.9999996840367184
         ]
     },
     "Blasius": {
@@ -456,18 +364,7 @@
         },
         "period": 6.6038,
         "pesin_entropy": 0.04893069104351076,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            9.309552679443819,
-            8.731837829164007,
-            0.603152080763951
-        ],
-        "scale": [
-            11.019189256998164,
-            10.231381214937986,
-            1.1874630549214675
-        ]
+        "unbounded_indices": []
     },
     "BlinkingRotlet": {
         "bifurcation_parameter": null,
@@ -505,17 +402,6 @@
             0,
             1,
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            0.01593036486933197,
-            -0.028583696354183397,
-            1.9156907561490577e-05
-        ],
-        "scale": [
-            1.7807406915700559,
-            1.1070971897051138,
-            1.9999614263810892
         ]
     },
     "BlinkingVortex": {
@@ -554,17 +440,6 @@
             0,
             1,
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            -0.01250909168092268,
-            -0.05827526309415504,
-            -1.4237882844658767e-05
-        ],
-        "scale": [
-            1.755722364799425,
-            1.3472020142771814,
-            1.999971513246118
         ]
     },
     "Bouali": {
@@ -601,18 +476,7 @@
         },
         "period": 3.0411,
         "pesin_entropy": 0.049816045406570614,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.2639580915169406,
-            5.192245845457723,
-            -3.074737266780998
-        ],
-        "scale": [
-            4.824353903249184,
-            8.242386359776116,
-            8.997487254015688
-        ]
+        "unbounded_indices": []
     },
     "Bouali2": {
         "bifurcation_parameter": null,
@@ -648,18 +512,7 @@
         },
         "period": 2.6779,
         "pesin_entropy": 0.02439941982137089,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.15424940759190564,
-            1.431685793086397,
-            -0.056435734144553384
-        ],
-        "scale": [
-            5.039809564918335,
-            2.4254436518380635,
-            0.05171369228910677
-        ]
+        "unbounded_indices": []
     },
     "BurkeShaw": {
         "bifurcation_parameter": null,
@@ -690,18 +543,7 @@
         },
         "period": 0.78333,
         "pesin_entropy": 2.37241205523524,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.05048784465552125,
-            0.11427578884324441,
-            -0.47524450790502204
-        ],
-        "scale": [
-            5.165680888763763,
-            7.925205417596995,
-            6.455133351799353
-        ]
+        "unbounded_indices": []
     },
     "CaTwoPlus": {
         "bifurcation_parameter": null,
@@ -749,18 +591,7 @@
         },
         "period": 1.343,
         "pesin_entropy": 0.6014645592138562,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.36259348479663317,
-            1.0037632077833476,
-            0.1245422942940076
-        ],
-        "scale": [
-            0.2945196868517582,
-            0.6466438124963932,
-            0.045247885611819805
-        ]
+        "unbounded_indices": []
     },
     "CaTwoPlusQuasiperiodic": {
         "bifurcation_parameter": null,
@@ -808,18 +639,7 @@
         },
         "period": 0.65614,
         "pesin_entropy": 0.16210233717161812,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.3742064329664681,
-            0.948185108468719,
-            0.5404055267368199
-        ],
-        "scale": [
-            0.3131878220250689,
-            0.46676265051688326,
-            0.7351850295066464
-        ]
+        "unbounded_indices": []
     },
     "CellCycle": {
         "bifurcation_parameter": null,
@@ -865,24 +685,7 @@
         },
         "period": 204.71,
         "pesin_entropy": 0.004765100518900255,
-        "unbounded_indices": [],
-        "dimension": 6,
-        "offset": [
-            0.6970103360066914,
-            0.5753367674055195,
-            0.5209289022610729,
-            0.7890561501741015,
-            0.60178452674873,
-            0.5673362338647678
-        ],
-        "scale": [
-            0.6168568736138,
-            0.7922402696505145,
-            0.937364585188664,
-            0.7665035329422796,
-            0.7483997235615659,
-            0.8447446142251398
-        ]
+        "unbounded_indices": []
     },
     "CellularNeuralNetwork": {
         "bifurcation_parameter": null,
@@ -915,18 +718,7 @@
         },
         "period": 3.2,
         "pesin_entropy": 0.1016320623247746,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.0034824493653488053,
-            0.003755210607748305,
-            -0.006218201128944778
-        ],
-        "scale": [
-            3.3647971688834906,
-            2.504467551682418,
-            2.67433128509429
-        ]
+        "unbounded_indices": []
     },
     "Chen": {
         "bifurcation_parameter": null,
@@ -958,18 +750,7 @@
         },
         "period": 0.58689,
         "pesin_entropy": 2.047313967129477,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -2.7168148344487904,
-            -2.840075356367377,
-            26.04011565288156
-        ],
-        "scale": [
-            40.352849940069795,
-            46.105998348746496,
-            34.07622305737421
-        ]
+        "unbounded_indices": []
     },
     "ChenLee": {
         "bifurcation_parameter": null,
@@ -1001,18 +782,7 @@
         },
         "period": 2.8043,
         "pesin_entropy": 0.16478856872146466,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.23599816639971838,
-            -0.19411617359884925,
-            9.069617827734254
-        ],
-        "scale": [
-            28.8389511689969,
-            23.374182714544872,
-            9.800544515736583
-        ]
+        "unbounded_indices": []
     },
     "Chua": {
         "bifurcation_parameter": null,
@@ -1045,18 +815,7 @@
         },
         "period": 1.4235,
         "pesin_entropy": 0.4645707969482971,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.014046895696718575,
-            -0.007907957931326537,
-            -0.041586018441178485
-        ],
-        "scale": [
-            4.42929116203155,
-            0.7123776764400909,
-            6.926966438282165
-        ]
+        "unbounded_indices": []
     },
     "CircadianRhythm": {
         "bifurcation_parameter": null,
@@ -1106,21 +865,6 @@
         "pesin_entropy": 0.09372724379002938,
         "unbounded_indices": [
             4
-        ],
-        "dimension": 5,
-        "offset": [
-            8.182960407360627,
-            10.390097875362095,
-            25.106686982097056,
-            11.367665570436065,
-            1.1102230246251565e-16
-        ],
-        "scale": [
-            16.27759381250721,
-            19.003973696688746,
-            49.961452587156735,
-            21.53703333683514,
-            1.9999977977783037
         ]
     },
     "CoevolvingPredatorPrey": {
@@ -1162,18 +906,7 @@
         },
         "period": 122.77,
         "pesin_entropy": 0.005379136261058156,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.2630014770080467,
-            0.5314251307274517,
-            0.3694433600119303
-        ],
-        "scale": [
-            0.5258891893753476,
-            0.39089319338340794,
-            0.6752868807585856
-        ]
+        "unbounded_indices": []
     },
     "Colpitts": {
         "bifurcation_parameter": null,
@@ -1207,18 +940,7 @@
         },
         "period": 4.2676,
         "pesin_entropy": 0.1390751886208436,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            8.29020951410815,
-            1.3096589707527264,
-            10.288735635820697
-        ],
-        "scale": [
-            5.584104105093335,
-            3.908224072810456,
-            3.21716105537598
-        ]
+        "unbounded_indices": []
     },
     "Coullet": {
         "bifurcation_parameter": null,
@@ -1251,18 +973,7 @@
         },
         "period": 5.7663,
         "pesin_entropy": 0.14919849957322842,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.043307612756969927,
-            -0.12625022279931847,
-            -0.12674405322212373
-        ],
-        "scale": [
-            2.5997162117993087,
-            2.1425517481586422,
-            2.2034418207408537
-        ]
+        "unbounded_indices": []
     },
     "Dadras": {
         "bifurcation_parameter": null,
@@ -1296,18 +1007,7 @@
         },
         "period": 3.2886,
         "pesin_entropy": 0.4798988304624064,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            1.4387169712554924,
-            -0.9001392315352339,
-            -1.2625054628174381
-        ],
-        "scale": [
-            27.006703515031944,
-            16.26284307758896,
-            18.466615757277754
-        ]
+        "unbounded_indices": []
     },
     "DequanLi": {
         "bifurcation_parameter": null,
@@ -1342,18 +1042,7 @@
         },
         "period": 0.083806,
         "pesin_entropy": 1.9588606250917073,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -5.748016667570539,
-            3.2309234784942333,
-            101.54027459666328
-        ],
-        "scale": [
-            255.04415692948197,
-            346.07503412297206,
-            267.7526726062205
-        ]
+        "unbounded_indices": []
     },
     "DoubleGyre": {
         "bifurcation_parameter": null,
@@ -1387,17 +1076,6 @@
         "pesin_entropy": 0.06285936079346421,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            1.0057783728961067,
-            0.5132346165620922,
-            -3.0432991837692214e-07
-        ],
-        "scale": [
-            1.9253887675804848,
-            0.9695732868758157,
-            1.9999988282188161
         ]
     },
     "DoublePendulum": {
@@ -1434,19 +1112,6 @@
         "unbounded_indices": [
             0,
             1
-        ],
-        "dimension": 4,
-        "offset": [
-            1.0069325878103719e-06,
-            -3.8279303762323025e-06,
-            -0.06318924262679015,
-            -0.031219138387508227
-        ],
-        "scale": [
-            1.9999929399957224,
-            1.9999921533550102,
-            19.538648129335584,
-            9.65601904163903
         ]
     },
     "Duffing": {
@@ -1483,17 +1148,6 @@
         "pesin_entropy": 0.10008657388524086,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            0.02687015171006979,
-            -0.08009991232324404,
-            5.751606553250355e-07
-        ],
-        "scale": [
-            3.009575264431015,
-            2.0064868518954038,
-            1.9999988496786893
         ]
     },
     "ExcitableCell": {
@@ -1535,18 +1189,7 @@
         },
         "period": 0.5528,
         "pesin_entropy": 17.030315084501463,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -32.88474813397666,
-            0.253196226586207,
-            0.46949630127570363
-        ],
-        "scale": [
-            26.1431480734216,
-            0.26520956075799107,
-            0.014058860755438218
-        ]
+        "unbounded_indices": []
     },
     "Finance": {
         "bifurcation_parameter": null,
@@ -1578,18 +1221,7 @@
         },
         "period": 9.8932,
         "pesin_entropy": 0.1084488028544319,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.14391618498153647,
-            -4.3510851547029,
-            -0.06728379542326102
-        ],
-        "scale": [
-            4.607534773147606,
-            3.5117632411133446,
-            2.6490545073048684
-        ]
+        "unbounded_indices": []
     },
     "FluidTrampoline": {
         "bifurcation_parameter": null,
@@ -1623,17 +1255,6 @@
         "pesin_entropy": 0.08094585172323163,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            2.462415228714095,
-            -0.10441814748692702,
-            6.435023158224418e-07
-        ],
-        "scale": [
-            16.709481712929158,
-            12.063530715921132,
-            1.9999986510007854
         ]
     },
     "ForcedBrusselator": {
@@ -1669,17 +1290,6 @@
         "pesin_entropy": 0.0028307087627546254,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            0.5710813294088751,
-            2.4981566487357116,
-            -1.1363541517206421e-06
-        ],
-        "scale": [
-            0.6757409410815048,
-            1.5569947954576795,
-            1.9999973768467907
         ]
     },
     "ForcedFitzHughNagumo": {
@@ -1717,17 +1327,6 @@
         "pesin_entropy": 0.000828176101772673,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            0.02514408756583264,
-            0.9350675636054842,
-            -9.017540470446228e-07
-        ],
-        "scale": [
-            3.9934660778489035,
-            2.255948712592014,
-            1.99999774561473
         ]
     },
     "ForcedVanDerPol": {
@@ -1762,17 +1361,6 @@
         "pesin_entropy": 0.26518243888151155,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            -0.0026826286216545814,
-            -0.1950471523254036,
-            -1.0497422568422898e-06
-        ],
-        "scale": [
-            4.102307665759522,
-            25.517012157477282,
-            1.9999937962075753
         ]
     },
     "GenesioTesi": {
@@ -1805,18 +1393,7 @@
         },
         "period": 5.9431,
         "pesin_entropy": 0.10027488648885732,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.30150435138948906,
-            0.11682546113662307,
-            0.04339251748357609
-        ],
-        "scale": [
-            1.5242250959025037,
-            1.4463417671702146,
-            1.5627107960105906
-        ]
+        "unbounded_indices": []
     },
     "GuckenheimerHolmes": {
         "bifurcation_parameter": null,
@@ -1851,18 +1428,7 @@
         },
         "period": 0.3076923076923077,
         "pesin_entropy": 0.3408200356941137,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.33951623675680853,
-            -0.20114466780264983,
-            -0.15370847439135465
-        ],
-        "scale": [
-            6.972198881649875,
-            7.668490042407999,
-            2.0127444625555175
-        ]
+        "unbounded_indices": []
     },
     "Hadley": {
         "bifurcation_parameter": null,
@@ -1895,18 +1461,7 @@
         },
         "period": 1.4541,
         "pesin_entropy": 0.3144504334934165,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            1.094354398332678,
-            -0.06033403623411471,
-            0.33012485235090494
-        ],
-        "scale": [
-            1.576320915768758,
-            3.3134188661827584,
-            3.1817686852221634
-        ]
+        "unbounded_indices": []
     },
     "Halvorsen": {
         "bifurcation_parameter": null,
@@ -1937,18 +1492,7 @@
         },
         "period": 1.4889,
         "pesin_entropy": 0.586197150399321,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -3.477925924547158,
-            -3.619042223379363,
-            -3.0536618026629476
-        ],
-        "scale": [
-            19.613983003398204,
-            19.263437739868362,
-            18.80968103208756
-        ]
+        "unbounded_indices": []
     },
     "HastingsPowell": {
         "bifurcation_parameter": null,
@@ -1983,18 +1527,7 @@
         },
         "period": 135.19,
         "pesin_entropy": 0.014350053316477346,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.5660152351873705,
-            0.2213373228457836,
-            8.954016696859995
-        ],
-        "scale": [
-            0.829736632781227,
-            0.41261582817782616,
-            3.0016368130259456
-        ]
+        "unbounded_indices": []
     },
     "HenonHeiles": {
         "bifurcation_parameter": null,
@@ -2026,20 +1559,7 @@
         },
         "period": 6.37,
         "pesin_entropy": 0.03870865064107525,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -0.01590573156535663,
-            0.060697980187028544,
-            0.07759365460641665,
-            -0.00802593111367525
-        ],
-        "scale": [
-            1.0495630953269264,
-            0.9736951323669754,
-            0.8876216304635873,
-            0.9352047752847288
-        ]
+        "unbounded_indices": []
     },
     "HindmarshRose": {
         "bifurcation_parameter": null,
@@ -2075,18 +1595,7 @@
         },
         "period": 1.752,
         "pesin_entropy": 0.2639169709155772,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.44980866391436947,
-            -0.24600355198662754,
-            -0.08961559161750116
-        ],
-        "scale": [
-            2.428342446827095,
-            0.4861332561425409,
-            0.6953634824865191
-        ]
+        "unbounded_indices": []
     },
     "Hopfield": {
         "bifurcation_parameter": null,
@@ -2174,24 +1683,7 @@
         },
         "period": 10.865,
         "pesin_entropy": 0.07748903749076723,
-        "unbounded_indices": [],
-        "dimension": 6,
-        "offset": [
-            -0.0029421378489339345,
-            -0.005465034944872382,
-            0.02010790251563771,
-            0.00633355765825816,
-            -0.0026010324922611794,
-            -0.0006248853660889564
-        ],
-        "scale": [
-            2.1607057279760777,
-            2.441823391369073,
-            1.8898919001600691,
-            2.2637709921125126,
-            2.372898425891207,
-            2.068133115978128
-        ]
+        "unbounded_indices": []
     },
     "HyperBao": {
         "bifurcation_parameter": null,
@@ -2227,20 +1719,7 @@
         },
         "period": 0.5831505997603473,
         "pesin_entropy": 0.9201105075982862,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -0.93224062967038,
-            -1.1627894646904142,
-            22.001285503272996,
-            11.450962173596409
-        ],
-        "scale": [
-            38.67693170134211,
-            41.411467350073096,
-            28.10580297777892,
-            159.0287338450288
-        ]
+        "unbounded_indices": []
     },
     "HyperCai": {
         "bifurcation_parameter": null,
@@ -2276,20 +1755,7 @@
         },
         "period": 0.6113936187028436,
         "pesin_entropy": 1.7628989064551457,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -1.227802212316452,
-            -1.6906317195695735,
-            24.399847875544207,
-            -12.842579545653424
-        ],
-        "scale": [
-            31.110738906406787,
-            34.68924121830688,
-            23.5676534924956,
-            26.15975217136239
-        ]
+        "unbounded_indices": []
     },
     "HyperJha": {
         "bifurcation_parameter": null,
@@ -2324,20 +1790,7 @@
         },
         "period": 0.8564467295817622,
         "pesin_entropy": 0.6925398922206352,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -0.5103912672331319,
-            1.2746072646701219,
-            24.609280429372802,
-            -8.581472769959959
-        ],
-        "scale": [
-            40.023600519646926,
-            40.96674236113175,
-            30.511387359649465,
-            259.770007986799
-        ]
+        "unbounded_indices": []
     },
     "HyperLorenz": {
         "bifurcation_parameter": null,
@@ -2372,24 +1825,11 @@
         },
         "period": 1.277546730110058,
         "pesin_entropy": 0.5865242415766048,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -2.88743788801885,
-            0.4373495155995428,
-            25.97838549753756,
-            -35.36783579123925
-        ],
-        "scale": [
-            40.03497245405238,
-            41.51609019996803,
-            31.69728044925924,
-            251.03203912241702
-        ]
+        "unbounded_indices": []
     },
     "HyperLu": {
         "bifurcation_parameter": null,
-        "citation": "Chen, A., Lu, J., L\u00c3\u00bc, J., & Yu, S. (2006). Generating hyperchaotic L\u00c3\u00bc attractor via state feedback control. Physica A: Statistical Mechanics and its Applications, 364, 103-110.",
+        "citation": "Chen, A., Lu, J., Lü, J., & Yu, S. (2006). Generating hyperchaotic Lü attractor via state feedback control. Physica A: Statistical Mechanics and its Applications, 364, 103-110.",
         "correlation_dimension": 2.343735648584751,
         "delay": false,
         "description": "A hyperchaotic variant of the Lu attractor.",
@@ -2420,24 +1860,11 @@
         },
         "period": 0.7162856981996777,
         "pesin_entropy": 1.5894616248138722,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -1.204576644407636,
-            -3.2229730396924836,
-            24.8806151113396,
-            41.25048659822849
-        ],
-        "scale": [
-            32.26716039940091,
-            36.783792600998815,
-            27.677595957619403,
-            186.1311415685409
-        ]
+        "unbounded_indices": []
     },
     "HyperPang": {
         "bifurcation_parameter": null,
-        "citation": "Pang, S., & Liu, Y. (2011). A new hyperchaotic system from the L\u00c3\u00bc system and its control. Journal of Computational and Applied Mathematics, 235(8), 2775-2789.",
+        "citation": "Pang, S., & Liu, Y. (2011). A new hyperchaotic system from the Lü system and its control. Journal of Computational and Applied Mathematics, 235(8), 2775-2789.",
         "correlation_dimension": 2.409444534598458,
         "delay": false,
         "description": "A hyperchaotic system.",
@@ -2468,20 +1895,7 @@
         },
         "period": 0.8439374360017028,
         "pesin_entropy": 1.871913394885623,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -0.5377545598187776,
-            -0.6369690766126208,
-            21.514494778005243,
-            9.160401743970622
-        ],
-        "scale": [
-            35.96951951509833,
-            38.91444477635652,
-            24.82472693082752,
-            24.494812901360202
-        ]
+        "unbounded_indices": []
     },
     "HyperQi": {
         "bifurcation_parameter": null,
@@ -2518,20 +1932,7 @@
         },
         "period": 0.06186038560173437,
         "pesin_entropy": 16.760797859069733,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -7.1673910607551505,
-            -7.312371696757644,
-            -36.69021553681925,
-            64.27781086518777
-        ],
-        "scale": [
-            339.7079270961759,
-            254.89484207592147,
-            332.8885834981377,
-            465.05265886711294
-        ]
+        "unbounded_indices": []
     },
     "HyperRossler": {
         "bifurcation_parameter": null,
@@ -2566,20 +1967,7 @@
         },
         "period": 1.1157476694793766,
         "pesin_entropy": 0.2789695684743801,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -40.979292674228205,
-            -14.021580819296176,
-            90.45802608382195,
-            40.36813304013609
-        ],
-        "scale": [
-            110.3768663796038,
-            94.21649225032559,
-            180.85366583358876,
-            19.438951346174065
-        ]
+        "unbounded_indices": []
     },
     "HyperWang": {
         "bifurcation_parameter": null,
@@ -2615,20 +2003,7 @@
         },
         "period": 0.6481520567576332,
         "pesin_entropy": 1.480677798661507,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            0.7034415300911823,
-            0.13853188688748652,
-            52.36215138494582,
-            6.681336298424737
-        ],
-        "scale": [
-            27.6262214909044,
-            41.96989744421796,
-            71.98514129166546,
-            61.31623290360943
-        ]
+        "unbounded_indices": []
     },
     "HyperXu": {
         "bifurcation_parameter": null,
@@ -2664,20 +2039,7 @@
         },
         "period": 1.1328151255687646,
         "pesin_entropy": 1.2491913312241498,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            0.6831664854918942,
-            0.9643663812354939,
-            -2.405655599454429,
-            1.714462626437113
-        ],
-        "scale": [
-            10.555843761911081,
-            16.534092545529973,
-            3.942557958651233,
-            24.181735822346567
-        ]
+        "unbounded_indices": []
     },
     "HyperYan": {
         "bifurcation_parameter": null,
@@ -2712,20 +2074,7 @@
         },
         "period": 0.9127028626966961,
         "pesin_entropy": 1.0650687356473167,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            1.6318536297670327,
-            1.7809440923206843,
-            30.703686622600856,
-            -3.1064292683359307
-        ],
-        "scale": [
-            36.43739943098173,
-            39.71171884245165,
-            51.863593345067585,
-            15.865612120124252
-        ]
+        "unbounded_indices": []
     },
     "HyperYangChen": {
         "bifurcation_parameter": null,
@@ -2760,20 +2109,7 @@
         },
         "period": 0.9127028626966961,
         "pesin_entropy": 0.9255171125652686,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            -2.764113387959865,
-            -3.6692721702943345,
-            34.29935664477168,
-            0.2123363165082104
-        ],
-        "scale": [
-            43.77342798385324,
-            48.76019099769498,
-            43.690423787261516,
-            66.77512476746489
-        ]
+        "unbounded_indices": []
     },
     "IkedaDelay": {
         "bifurcation_parameter": null,
@@ -2819,32 +2155,7 @@
         },
         "period": 1.486528,
         "pesin_entropy": 0.7465581459689814,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            -5.026406190243852,
-            -1.5440477684267893,
-            0.04067732734470031,
-            0.7303530007930732,
-            1.1673378245352195,
-            0.7366879951494525,
-            0.7366879951494525,
-            0.7366879951494525,
-            0.7366879951494525,
-            0.7366879951494525
-        ],
-        "scale": [
-            20.52483959706321,
-            13.56012275342908,
-            16.729572944972062,
-            18.108924291868806,
-            17.234954644384516,
-            18.096254303156048,
-            18.096254303156048,
-            18.096254303156048,
-            18.096254303156048,
-            18.096254303156048
-        ]
+        "unbounded_indices": []
     },
     "IsothermalChemical": {
         "bifurcation_parameter": null,
@@ -2877,18 +2188,7 @@
         },
         "period": 0.7302799999999999,
         "pesin_entropy": 0.3365871343421436,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.4044670386177576,
-            1.5246646299481268,
-            1.107621586231973
-        ],
-        "scale": [
-            0.21953671681209197,
-            2.252037388595808,
-            0.22048049476005682
-        ]
+        "unbounded_indices": []
     },
     "ItikBanksTumor": {
         "bifurcation_parameter": null,
@@ -2925,18 +2225,7 @@
         },
         "period": 49.74,
         "pesin_entropy": 0.022156938955395417,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.4842466914241965,
-            0.4712872733498847,
-            0.43529278735963606
-        ],
-        "scale": [
-            0.9239040118775068,
-            0.9388035635827011,
-            0.8705834331931868
-        ]
+        "unbounded_indices": []
     },
     "JerkCircuit": {
         "bifurcation_parameter": null,
@@ -2967,18 +2256,7 @@
         },
         "period": 19.4546,
         "pesin_entropy": 0.5797755601628214,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.5757276037936767,
-            -0.22327363320546784,
-            0.07525902271284213
-        ],
-        "scale": [
-            2.6627862789206422,
-            1.7145944935470236,
-            2.786472027938246
-        ]
+        "unbounded_indices": []
     },
     "KawczynskiStrizhak": {
         "bifurcation_parameter": null,
@@ -3011,18 +2289,7 @@
         },
         "period": 7.991666666666667,
         "pesin_entropy": 0.02560751992932341,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.0206453434369398,
-            -0.07264740905843547,
-            -0.36529259537294434
-        ],
-        "scale": [
-            4.582236189266766,
-            13.632940202445429,
-            1.7003787826054013
-        ]
+        "unbounded_indices": []
     },
     "Laser": {
         "bifurcation_parameter": null,
@@ -3057,18 +2324,7 @@
         },
         "period": 0.94667,
         "pesin_entropy": 0.7848314215142518,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.009163377800533556,
-            -0.004740641611856278,
-            -2.7345434667093715
-        ],
-        "scale": [
-            6.175868355351402,
-            4.533641426595162,
-            4.986109057260982
-        ]
+        "unbounded_indices": []
     },
     "LiuChen": {
         "bifurcation_parameter": null,
@@ -3105,18 +2361,7 @@
         },
         "period": 8.0164,
         "pesin_entropy": 0.2133214258413513,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.6145447742722716,
-            -0.7384163781541178,
-            0.1272115913823555
-        ],
-        "scale": [
-            50.07562747732146,
-            29.453140112077612,
-            36.392201313186504
-        ]
+        "unbounded_indices": []
     },
     "Lorenz": {
         "bifurcation_parameter": null,
@@ -3148,18 +2393,7 @@
         },
         "period": 1.5008,
         "pesin_entropy": 1.121034394385731,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.3057981660868343,
-            -0.5645743017998015,
-            25.286712682247625
-        ],
-        "scale": [
-            34.9410956881273,
-            46.48086685356313,
-            38.04293317721964
-        ]
+        "unbounded_indices": []
     },
     "Lorenz84": {
         "bifurcation_parameter": null,
@@ -3192,18 +2426,7 @@
         },
         "period": 6.2586,
         "pesin_entropy": 1.0474807193950644,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.7655409175322201,
-            0.28304037646734836,
-            0.40425654044321524
-        ],
-        "scale": [
-            3.1321266736066464,
-            5.542661839970673,
-            5.764470080781137
-        ]
+        "unbounded_indices": []
     },
     "Lorenz96": {
         "bifurcation_parameter": null,
@@ -3235,20 +2458,7 @@
         },
         "period": 2.1969,
         "pesin_entropy": 1.7965535889066073,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            3.2645426755286158,
-            2.551214768463952,
-            2.6904534858858327,
-            2.487605984251342
-        ],
-        "scale": [
-            30.387810217438428,
-            31.635144464811116,
-            31.3708960334205,
-            31.30961567688297
-        ]
+        "unbounded_indices": []
     },
     "LorenzBounded": {
         "bifurcation_parameter": null,
@@ -3281,18 +2491,7 @@
         },
         "period": 1.3716,
         "pesin_entropy": 0.8513198508911037,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.8664225589293295,
-            -1.5667515656755633,
-            25.336768921330222
-        ],
-        "scale": [
-            33.591211290195325,
-            43.95191925194197,
-            37.380681529928715
-        ]
+        "unbounded_indices": []
     },
     "LorenzCoupled": {
         "bifurcation_parameter": null,
@@ -3333,24 +2532,7 @@
         },
         "period": 1.6207,
         "pesin_entropy": 1.3441017676936224,
-        "unbounded_indices": [],
-        "dimension": 6,
-        "offset": [
-            0.7883824479141097,
-            1.6328178709496033,
-            32.11812966867339,
-            0.08936716690398905,
-            -0.0023700578984460208,
-            0.48905283416908113
-        ],
-        "scale": [
-            39.53912666204973,
-            54.771624464570365,
-            47.25292946783101,
-            8.497950402420937,
-            2.168244953055281,
-            1.0069862215279601
-        ]
+        "unbounded_indices": []
     },
     "LorenzStenflo": {
         "bifurcation_parameter": null,
@@ -3385,20 +2567,7 @@
         },
         "period": 3.8877142857142855,
         "pesin_entropy": 0.47552214199746434,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            0.5099846638768186,
-            1.6027559407542578,
-            23.592682250896377,
-            -0.07384264741870616
-        ],
-        "scale": [
-            15.195596753819066,
-            29.039209262423896,
-            27.250781298913502,
-            4.674309362608958
-        ]
+        "unbounded_indices": []
     },
     "LuChen": {
         "bifurcation_parameter": null,
@@ -3430,18 +2599,7 @@
         },
         "period": 2.3385,
         "pesin_entropy": 0.8102183938978158,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.6334306943472416,
-            0.7586879950438625,
-            19.028126294447635
-        ],
-        "scale": [
-            32.25023050015879,
-            34.45146305575585,
-            21.936945911470858
-        ]
+        "unbounded_indices": []
     },
     "LuChenCheng": {
         "bifurcation_parameter": null,
@@ -3473,18 +2631,7 @@
         },
         "period": 0.92333,
         "pesin_entropy": 0.3510621518701211,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            4.668436240352066,
-            5.186083461674119,
-            11.82949941395404
-        ],
-        "scale": [
-            33.16970968591124,
-            25.764683241644228,
-            21.08718905370825
-        ]
+        "unbounded_indices": []
     },
     "MacArthur": {
         "bifurcation_parameter": null,
@@ -3611,32 +2758,7 @@
         },
         "period": 43.406,
         "pesin_entropy": 0.19832837112603868,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            11.860606381990415,
-            20.18749622888963,
-            28.43537443825905,
-            12.530247702197881,
-            39.3293236417158,
-            0.37236968837829315,
-            0.19063278607108786,
-            0.5062334859837606,
-            0.16590734677844743,
-            0.23498760230645052
-        ],
-        "scale": [
-            8.183552596993907,
-            15.014699640269376,
-            18.9527291462529,
-            9.012471658885897,
-            19.722638582043917,
-            0.5584525308455234,
-            0.18474461236592868,
-            0.8173386569886036,
-            0.14629599897486933,
-            0.2792546614191634
-        ]
+        "unbounded_indices": []
     },
     "MackeyGlass": {
         "bifurcation_parameter": null,
@@ -3682,32 +2804,7 @@
         },
         "period": 5.9612230962292045,
         "pesin_entropy": 0.3741375523997009,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841,
-            0.8478643247243841
-        ],
-        "scale": [
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171,
-            0.9744868065004171
-        ]
+        "unbounded_indices": []
     },
     "MooreSpiegel": {
         "bifurcation_parameter": null,
@@ -3739,18 +2836,7 @@
         },
         "period": 1.2887,
         "pesin_entropy": 0.4076334003995097,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.984813070819806,
-            1.517064609041281,
-            -39.98800180553184
-        ],
-        "scale": [
-            15.48041510754376,
-            111.4197320874406,
-            176.307963038756
-        ]
+        "unbounded_indices": []
     },
     "MultiChua": {
         "bifurcation_parameter": null,
@@ -3797,18 +2883,7 @@
         },
         "period": 2.2586,
         "pesin_entropy": 0.22151080996231726,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -13.444284449365838,
-            0.3826617006044777,
-            15.019735745132575
-        ],
-        "scale": [
-            30.397302215309416,
-            8.051831523962939,
-            47.83174992209654
-        ]
+        "unbounded_indices": []
     },
     "NewtonLiepnik": {
         "bifurcation_parameter": null,
@@ -3839,18 +2914,7 @@
         },
         "period": 8.5095,
         "pesin_entropy": 0.17242608410350868,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.007804706966315189,
-            0.003916599998324319,
-            0.2068974206765066
-        ],
-        "scale": [
-            1.3151255733195653,
-            0.45632151026600554,
-            0.429155324696244
-        ]
+        "unbounded_indices": []
     },
     "NoseHoover": {
         "bifurcation_parameter": null,
@@ -3880,18 +2944,7 @@
         },
         "period": 5.8673,
         "pesin_entropy": 0.04895455741323442,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.0302186613313307,
-            0.019239236495728562,
-            0.052086169881314204
-        ],
-        "scale": [
-            4.11637701809071,
-            7.662903572384593,
-            6.546848226498678
-        ]
+        "unbounded_indices": []
     },
     "NuclearQuadrupole": {
         "bifurcation_parameter": null,
@@ -3925,20 +2978,7 @@
         },
         "period": 6.023076923076923,
         "pesin_entropy": 0.3448827969293456,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            0.6377447996919436,
-            0.0033950075617394937,
-            0.004590949081007212,
-            0.02206110353609747
-        ],
-        "scale": [
-            4.552445860071133,
-            5.171264606308991,
-            4.022141558986927,
-            3.931886588354991
-        ]
+        "unbounded_indices": []
     },
     "OscillatingFlow": {
         "bifurcation_parameter": null,
@@ -3974,17 +3014,6 @@
         "unbounded_indices": [
             0,
             1
-        ],
-        "dimension": 3,
-        "offset": [
-            -1.2186388115287272e-07,
-            1.5663312916551146,
-            1.6464886009037727e-06
-        ],
-        "scale": [
-            1.9999997562722376,
-            3.0942182509258096,
-            1.999996306126627
         ]
     },
     "PanXuZhou": {
@@ -4020,18 +3049,7 @@
         },
         "period": 1.7829,
         "pesin_entropy": 0.885775515374341,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.05424398185319568,
-            0.12341678859194616,
-            14.797500293381617
-        ],
-        "scale": [
-            25.167184336642233,
-            30.617376279003462,
-            22.665708071179274
-        ]
+        "unbounded_indices": []
     },
     "PehlivanWei": {
         "bifurcation_parameter": null,
@@ -4059,18 +3077,7 @@
         "parameters": {},
         "period": 3.7487330316742087,
         "pesin_entropy": 0.09665562724246173,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.4672793820292305,
-            0.6388486413390808,
-            -2.4599027162974623
-        ],
-        "scale": [
-            8.97941034697552,
-            9.880493929194934,
-            9.019261077985735
-        ]
+        "unbounded_indices": []
     },
     "PiecewiseCircuit": {
         "bifurcation_parameter": null,
@@ -4116,32 +3123,7 @@
         },
         "period": 52.99484890125133,
         "pesin_entropy": 0.014785562725300386,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.007841015640270621,
-            -0.009572813615873477
-        ],
-        "scale": [
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.872393971234494,
-            5.868930375283288
-        ]
+        "unbounded_indices": []
     },
     "Qi": {
         "bifurcation_parameter": null,
@@ -4176,20 +3158,7 @@
         },
         "period": 0.40820999999999996,
         "pesin_entropy": 2.168055534452874,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            0.36293533402839717,
-            0.2820651490396382,
-            6.852005272099878,
-            2.7788978435068614
-        ],
-        "scale": [
-            10.31158808372299,
-            7.8332593571434375,
-            3.069274491037673,
-            5.421095834560937
-        ]
+        "unbounded_indices": []
     },
     "QiChen": {
         "bifurcation_parameter": null,
@@ -4221,18 +3190,7 @@
         },
         "period": 0.39179,
         "pesin_entropy": 4.021803358941824,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -5.056721891490138,
-            -2.697617399983953,
-            81.75830941679467
-        ],
-        "scale": [
-            114.9190592110462,
-            46.63154062642346,
-            40.709367186218785
-        ]
+        "unbounded_indices": []
     },
     "RabinovichFabrikant": {
         "bifurcation_parameter": null,
@@ -4263,18 +3221,7 @@
         },
         "period": 2.3356,
         "pesin_entropy": 0.24239107527154555,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.1345662314663434,
-            1.0519873453209483,
-            0.7197959807611436
-        ],
-        "scale": [
-            1.4689570140473318,
-            2.6367673515888344,
-            1.2536868945328923
-        ]
+        "unbounded_indices": []
     },
     "RayleighBenard": {
         "bifurcation_parameter": null,
@@ -4306,18 +3253,7 @@
         },
         "period": 0.91967,
         "pesin_entropy": 2.0174516011928527,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.645739767194037,
-            -0.7683802009516256,
-            19.675630345950324
-        ],
-        "scale": [
-            42.0099419379728,
-            47.24741755441122,
-            30.972570217660323
-        ]
+        "unbounded_indices": []
     },
     "RikitakeDynamo": {
         "bifurcation_parameter": null,
@@ -4348,18 +3284,7 @@
         },
         "period": 5.8975,
         "pesin_entropy": 0.14655639292019562,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.012744416539494985,
-            0.013374865080987286,
-            1.6642145109728148
-        ],
-        "scale": [
-            6.686897310368113,
-            5.281931873512363,
-            4.54309314080113
-        ]
+        "unbounded_indices": []
     },
     "Rossler": {
         "bifurcation_parameter": null,
@@ -4391,18 +3316,7 @@
         },
         "period": 5.9086,
         "pesin_entropy": 0.08385261617721652,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            1.1694363370502874,
-            -1.4098269776803831,
-            9.474120554307115
-        ],
-        "scale": [
-            19.700213162653778,
-            17.76287806056302,
-            18.92038264781385
-        ]
+        "unbounded_indices": []
     },
     "Rucklidge": {
         "bifurcation_parameter": null,
@@ -4433,18 +3347,7 @@
         },
         "period": 6.0721,
         "pesin_entropy": 0.18286397807774446,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.4647500551630044,
-            -0.10779861691936476,
-            7.757112912364821
-        ],
-        "scale": [
-            18.757848714288976,
-            10.77451385573476,
-            14.785586703758241
-        ]
+        "unbounded_indices": []
     },
     "Sakarya": {
         "bifurcation_parameter": null,
@@ -4481,18 +3384,7 @@
         },
         "period": 4.9844,
         "pesin_entropy": 0.3084450450029706,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.8906308209559572,
-            -0.30764807040441156,
-            2.13497460294049
-        ],
-        "scale": [
-            48.3760325038932,
-            25.35819225801704,
-            21.189796327312365
-        ]
+        "unbounded_indices": []
     },
     "SaltonSea": {
         "bifurcation_parameter": null,
@@ -4529,18 +3421,7 @@
         },
         "period": 0.96738,
         "pesin_entropy": 0.39160860195935765,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            211.60255162318353,
-            103.60217163353514,
-            52.161725776092496
-        ],
-        "scale": [
-            255.78644524133057,
-            151.90750636332245,
-            32.006358136634724
-        ]
+        "unbounded_indices": []
     },
     "SanUmSrisuchinwong": {
         "bifurcation_parameter": null,
@@ -4570,18 +3451,7 @@
         },
         "period": 7.4654,
         "pesin_entropy": 0.23946267672516214,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.13036926875728816,
-            -0.24240285359808333,
-            0.7021280873937976
-        ],
-        "scale": [
-            4.839070196731187,
-            6.972642773759546,
-            10.417957666365407
-        ]
+        "unbounded_indices": []
     },
     "ScrollDelay": {
         "bifurcation_parameter": null,
@@ -4626,32 +3496,7 @@
         },
         "period": 152.40701151828662,
         "pesin_entropy": 0.016452858090143806,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944,
-            0.07341051027848944
-        ],
-        "scale": [
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225,
-            4.0554329449265225
-        ]
+        "unbounded_indices": []
     },
     "ShimizuMorioka": {
         "bifurcation_parameter": null,
@@ -4682,18 +3527,7 @@
         },
         "period": 12.038,
         "pesin_entropy": 0.044239420179671494,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.003760714635125395,
-            0.005979961729763561,
-            1.0766053030005844
-        ],
-        "scale": [
-            2.645486721653106,
-            1.576593274122793,
-            2.014832833321025
-        ]
+        "unbounded_indices": []
     },
     "SprottA": {
         "bifurcation_parameter": null,
@@ -4721,18 +3555,7 @@
         "parameters": {},
         "period": 6.3728461538461545,
         "pesin_entropy": 0.0343008088722448,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.007151890588833698,
-            -0.010072530080412312,
-            -0.011149967484253898
-        ],
-        "scale": [
-            4.177336032430812,
-            5.933144171318608,
-            4.427403666118638
-        ]
+        "unbounded_indices": []
     },
     "SprottB": {
         "bifurcation_parameter": null,
@@ -4760,18 +3583,7 @@
         "parameters": {},
         "period": 11.050142857142857,
         "pesin_entropy": 0.2250624765966855,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.0672010173571711,
-            -0.028915408602089965,
-            -0.28248848907553725
-        ],
-        "scale": [
-            9.646790362693313,
-            5.8642707225658475,
-            8.519600437718081
-        ]
+        "unbounded_indices": []
     },
     "SprottC": {
         "bifurcation_parameter": null,
@@ -4799,18 +3611,7 @@
         "parameters": {},
         "period": 8.8852,
         "pesin_entropy": 0.17933456833596748,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.25463282826562983,
-            -0.11010856139273517,
-            0.34213049401595264
-        ],
-        "scale": [
-            4.612484992762266,
-            3.258212716716029,
-            4.88128783672686
-        ]
+        "unbounded_indices": []
     },
     "SprottD": {
         "bifurcation_parameter": null,
@@ -4838,18 +3639,7 @@
         "parameters": {},
         "period": 4.8333,
         "pesin_entropy": 0.11594526886491094,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -2.1555280609737926,
-            -0.24315157533739995,
-            2.1785475288915217
-        ],
-        "scale": [
-            4.084761472414359,
-            3.902430541227381,
-            3.850107243125187
-        ]
+        "unbounded_indices": []
     },
     "SprottDelay": {
         "bifurcation_parameter": null,
@@ -4895,32 +3685,7 @@
         },
         "period": 14.15628,
         "pesin_entropy": 0.2056760250875861,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227,
-            9.471815193525227
-        ],
-        "scale": [
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931,
-            8.092571214930931
-        ]
+        "unbounded_indices": []
     },
     "SprottE": {
         "bifurcation_parameter": null,
@@ -4948,18 +3713,7 @@
         "parameters": {},
         "period": 7.6275,
         "pesin_entropy": 0.09866310814686535,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.3902882836718285,
-            0.7796814758922467,
-            1.2818553005940099
-        ],
-        "scale": [
-            2.611328958911139,
-            1.5355375265816018,
-            7.300495490102388
-        ]
+        "unbounded_indices": []
     },
     "SprottF": {
         "bifurcation_parameter": null,
@@ -4989,18 +3743,7 @@
         },
         "period": 19.244,
         "pesin_entropy": 0.1517317514265156,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.754859916964227,
-            -1.5695564944313098,
-            2.2879877179587593
-        ],
-        "scale": [
-            3.9639100174368345,
-            4.300535181289636,
-            4.550488538529001
-        ]
+        "unbounded_indices": []
     },
     "SprottG": {
         "bifurcation_parameter": null,
@@ -5030,18 +3773,7 @@
         },
         "period": 8.7097,
         "pesin_entropy": 0.03403484153064641,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.7156717984450917,
-            -0.7955319877871374,
-            0.019912316266987418
-        ],
-        "scale": [
-            3.7827452684086733,
-            3.507418822448483,
-            4.13173161504738
-        ]
+        "unbounded_indices": []
     },
     "SprottH": {
         "bifurcation_parameter": null,
@@ -5071,18 +3803,7 @@
         },
         "period": 20.229,
         "pesin_entropy": 0.14221937455131348,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.5903840791310566,
-            2.068408115803654,
-            -0.7755033004606556
-        ],
-        "scale": [
-            6.361966688423216,
-            5.914269178970598,
-            4.117910667676933
-        ]
+        "unbounded_indices": []
     },
     "SprottI": {
         "bifurcation_parameter": null,
@@ -5112,18 +3833,7 @@
         },
         "period": 10.93,
         "pesin_entropy": 0.02077411702709478,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.19975499760303844,
-            -0.16629340599105297,
-            0.12383093710363174
-        ],
-        "scale": [
-            0.6244957720996352,
-            1.7970511120396666,
-            0.863529971455708
-        ]
+        "unbounded_indices": []
     },
     "SprottJ": {
         "bifurcation_parameter": null,
@@ -5151,18 +3861,7 @@
         "parameters": {},
         "period": 4.836,
         "pesin_entropy": 0.04588958821017871,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            10.45858503883546,
-            -0.8849937742683673,
-            -3.725412255177576
-        ],
-        "scale": [
-            33.60015685743343,
-            9.119109232534546,
-            23.404121765240397
-        ]
+        "unbounded_indices": []
     },
     "SprottJerk": {
         "bifurcation_parameter": null,
@@ -5192,18 +3891,7 @@
         },
         "period": 11.921,
         "pesin_entropy": 0.06776939078007471,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            3.443886980558245,
-            -0.4686258251617126,
-            -1.0025266422476797
-        ],
-        "scale": [
-            8.851869330329247,
-            5.197626209729638,
-            4.620349466953476
-        ]
+        "unbounded_indices": []
     },
     "SprottK": {
         "bifurcation_parameter": null,
@@ -5233,18 +3921,7 @@
         },
         "period": 7.006,
         "pesin_entropy": 0.03788160511007809,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.7121983122025806,
-            -0.254854763003979,
-            1.3336990719772301
-        ],
-        "scale": [
-            4.2491814667293655,
-            2.7744748265457035,
-            4.141959751672034
-        ]
+        "unbounded_indices": []
     },
     "SprottL": {
         "bifurcation_parameter": null,
@@ -5275,18 +3952,7 @@
         },
         "period": 6.7262,
         "pesin_entropy": 0.0343958205328805,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.8091046234508878,
-            22.711697070686625,
-            -5.952850306928916
-        ],
-        "scale": [
-            16.081678976506417,
-            29.01134977061268,
-            11.409577076454102
-        ]
+        "unbounded_indices": []
     },
     "SprottM": {
         "bifurcation_parameter": null,
@@ -5316,18 +3982,7 @@
         },
         "period": 5.3644,
         "pesin_entropy": 0.05234518101225785,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.3076117276335313,
-            -2.816304434477262,
-            -0.6252213750857556
-        ],
-        "scale": [
-            4.943052179483364,
-            5.070777619561268,
-            5.603652272574708
-        ]
+        "unbounded_indices": []
     },
     "SprottMore": {
         "bifurcation_parameter": null,
@@ -5355,18 +4010,7 @@
         "parameters": {},
         "period": 6.62095890410959,
         "pesin_entropy": 0.32515558132375566,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.21620821628459252,
-            -0.10058401635469394,
-            -0.11227877074057424
-        ],
-        "scale": [
-            2.955454428365652,
-            3.5303747297859376,
-            2.013695941521914
-        ]
+        "unbounded_indices": []
     },
     "SprottN": {
         "bifurcation_parameter": null,
@@ -5394,18 +4038,7 @@
         "parameters": {},
         "period": 4.8135,
         "pesin_entropy": 0.061478272616693266,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -10.686923413124822,
-            -3.715800202273558,
-            -0.38423513522375563
-        ],
-        "scale": [
-            33.55601513548116,
-            23.37306594516887,
-            9.10900485500223
-        ]
+        "unbounded_indices": []
     },
     "SprottO": {
         "bifurcation_parameter": null,
@@ -5435,18 +4068,7 @@
         },
         "period": 9.755,
         "pesin_entropy": 0.07839013378156268,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.308229215703337,
-            -0.11370262203605092,
-            -0.2778595101611387
-        ],
-        "scale": [
-            1.048056201148953,
-            1.165496622755711,
-            2.537101475256785
-        ]
+        "unbounded_indices": []
     },
     "SprottP": {
         "bifurcation_parameter": null,
@@ -5476,18 +4098,7 @@
         },
         "period": 5.3414,
         "pesin_entropy": 0.10329419803150507,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.45224218921332493,
-            -0.21552620791348132,
-            0.6670326984999784
-        ],
-        "scale": [
-            2.0146371086002874,
-            1.4856294197942885,
-            1.9517400502708142
-        ]
+        "unbounded_indices": []
     },
     "SprottQ": {
         "bifurcation_parameter": null,
@@ -5518,18 +4129,7 @@
         },
         "period": 4.8443,
         "pesin_entropy": 0.13852213114060488,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.5947072801942592,
-            -1.2522144226850045,
-            1.7577047981662615
-        ],
-        "scale": [
-            10.015020043598144,
-            5.714483065004876,
-            14.774677087102665
-        ]
+        "unbounded_indices": []
     },
     "SprottR": {
         "bifurcation_parameter": null,
@@ -5560,18 +4160,7 @@
         },
         "period": 7.0133,
         "pesin_entropy": 0.07840404228136309,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.5169047598060046,
-            2.068604345534574,
-            -4.340865614757384
-        ],
-        "scale": [
-            9.872277456810544,
-            11.958701415862944,
-            19.49215448784137
-        ]
+        "unbounded_indices": []
     },
     "SprottS": {
         "bifurcation_parameter": null,
@@ -5599,18 +4188,7 @@
         "parameters": {},
         "period": 3.3505,
         "pesin_entropy": 0.21876911249150574,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.6170539789018417,
-            0.665654930020136,
-            0.28952111783406786
-        ],
-        "scale": [
-            5.789446645813959,
-            3.2612673307040243,
-            3.3672347789934536
-        ]
+        "unbounded_indices": []
     },
     "SprottTorus": {
         "bifurcation_parameter": null,
@@ -5638,18 +4216,7 @@
         "parameters": {},
         "period": 13.607,
         "pesin_entropy": 0.29710937347161515,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.9238869780936064,
-            -0.7537571813662682,
-            0.024676287986885148
-        ],
-        "scale": [
-            3.2495084282722386,
-            3.4443894831449398,
-            4.846059625712533
-        ]
+        "unbounded_indices": []
     },
     "StickSlipOscillator": {
         "bifurcation_parameter": null,
@@ -5689,17 +4256,6 @@
         "pesin_entropy": 0.07108101456222432,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            0.9376592506149938,
-            0.015425025386335695,
-            5.335479338341997e-07
-        ],
-        "scale": [
-            0.6806897494988104,
-            0.9127582296756998,
-            1.9999989329041323
         ]
     },
     "SwingingAtwood": {
@@ -5732,20 +4288,7 @@
         },
         "period": 0.3417647058823529,
         "pesin_entropy": 10.773094126465404,
-        "unbounded_indices": [],
-        "dimension": 4,
-        "offset": [
-            0.08111282189600053,
-            5.480263939316998e-07,
-            -0.033026690942306036,
-            0.02074166520574157
-        ],
-        "scale": [
-            0.15381775413895404,
-            1.9999989039472121,
-            14.896102610881886,
-            0.4403774749211241
-        ]
+        "unbounded_indices": []
     },
     "Thomas": {
         "bifurcation_parameter": null,
@@ -5776,18 +4319,7 @@
         },
         "period": 4.969,
         "pesin_entropy": 0.8163238880253334,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.0010733613689799526,
-            0.025674494490726563,
-            -0.12093911776828237
-        ],
-        "scale": [
-            8.275144648276234,
-            8.249688317544543,
-            8.062706104748175
-        ]
+        "unbounded_indices": []
     },
     "ThomasLabyrinth": {
         "bifurcation_parameter": null,
@@ -5818,18 +4350,7 @@
         },
         "period": 6.05,
         "pesin_entropy": 1.3437553833577704,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            1.0971323473127264,
-            -1.3584833941299959,
-            0.6519604763585782
-        ],
-        "scale": [
-            21.095257274065002,
-            20.763351277340593,
-            18.941483681120175
-        ]
+        "unbounded_indices": []
     },
     "Torus": {
         "bifurcation_parameter": null,
@@ -5861,18 +4382,7 @@
         },
         "period": 6.36,
         "pesin_entropy": 0.0,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -15.22670814030839,
-            1.910030149471082,
-            0.7279233385422837
-        ],
-        "scale": [
-            2.995736280616777,
-            2.997314617805557,
-            1.0002671205105684
-        ]
+        "unbounded_indices": []
     },
     "Tsucs2": {
         "bifurcation_parameter": null,
@@ -5907,18 +4417,7 @@
         },
         "period": 0.34526,
         "pesin_entropy": 0.6414001783252772,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.5285201773064543,
-            -1.746385442604062,
-            33.42148910150188
-        ],
-        "scale": [
-            135.25195657660987,
-            129.3997641199795,
-            82.42191412660063
-        ]
+        "unbounded_indices": []
     },
     "TurchinHanski": {
         "bifurcation_parameter": null,
@@ -5956,17 +4455,6 @@
         "pesin_entropy": 0.03719830596656144,
         "unbounded_indices": [
             2
-        ],
-        "dimension": 3,
-        "offset": [
-            0.6817185699931418,
-            0.1907670315655365,
-            1.509682904909937e-06
-        ],
-        "scale": [
-            1.3460920970702412,
-            0.354234111131073,
-            1.999994683875102
         ]
     },
     "VallisElNino": {
@@ -5999,18 +4487,7 @@
         },
         "period": 2.2087,
         "pesin_entropy": 0.6788458000114831,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.0892453827932922,
-            0.00738009038755133,
-            0.06399071733280332
-        ],
-        "scale": [
-            23.439528216605005,
-            1.2538150791867388,
-            1.0636406538556975
-        ]
+        "unbounded_indices": []
     },
     "VossDelay": {
         "bifurcation_parameter": null,
@@ -6054,32 +4531,7 @@
         },
         "period": 26.57243055290214,
         "pesin_entropy": 0.040600955873224424,
-        "unbounded_indices": [],
-        "dimension": 10,
-        "offset": [
-            -0.20404288003607596,
-            -0.20404288003607596,
-            -0.20404288003607596,
-            -0.20400525050175242,
-            -0.20417353298453547,
-            -0.20417353298453547,
-            -0.20417353298453547,
-            -0.20417353298453547,
-            -0.20416056837874078,
-            -0.20416056837874078
-        ],
-        "scale": [
-            1.0925359156101244,
-            1.0925359156101244,
-            1.0925359156101244,
-            1.0926111746787714,
-            1.0929477396443377,
-            1.0929477396443377,
-            1.0929477396443377,
-            1.0929477396443377,
-            1.092973668855927,
-            1.092973668855927
-        ]
+        "unbounded_indices": []
     },
     "WangSun": {
         "bifurcation_parameter": null,
@@ -6114,18 +4566,7 @@
         },
         "period": 26.958,
         "pesin_entropy": 0.07994326076367073,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.3482814397322721,
-            -0.19660411332357852,
-            0.14672298820597107
-        ],
-        "scale": [
-            4.44010742953509,
-            4.621125430198907,
-            3.7560235261410777
-        ]
+        "unbounded_indices": []
     },
     "WindmiReduced": {
         "bifurcation_parameter": null,
@@ -6160,18 +4601,7 @@
         },
         "period": 4.6733,
         "pesin_entropy": 0.15635149449218705,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            0.7687678677973979,
-            5.338592435322848,
-            91.62166335631333
-        ],
-        "scale": [
-            0.48463179739550444,
-            2.8076576853054025,
-            134.02275268018164
-        ]
+        "unbounded_indices": []
     },
     "YuWang": {
         "bifurcation_parameter": null,
@@ -6204,18 +4634,7 @@
         },
         "period": 1.3366,
         "pesin_entropy": 2.459880656234634,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.003036152535130787,
-            -0.019974210654085,
-            25.913419939259946
-        ],
-        "scale": [
-            4.3929256699924775,
-            7.660580096824242,
-            40.05417432100863
-        ]
+        "unbounded_indices": []
     },
     "YuWang2": {
         "bifurcation_parameter": null,
@@ -6248,18 +4667,7 @@
         },
         "period": 0.39265,
         "pesin_entropy": 0.8106827804626555,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -0.00043451421874851626,
-            -0.2325295316766134,
-            18.75272489224485
-        ],
-        "scale": [
-            4.619383795519056,
-            6.867327666588344,
-            25.647745235242695
-        ]
+        "unbounded_indices": []
     },
     "ZhouChen": {
         "bifurcation_parameter": null,
@@ -6293,17 +4701,6 @@
         },
         "period": 0.87518,
         "pesin_entropy": 0.5969734164748293,
-        "unbounded_indices": [],
-        "dimension": 3,
-        "offset": [
-            -1.8732414946081875,
-            52.17324959904944,
-            1.8538224716787468
-        ],
-        "scale": [
-            77.67088578062227,
-            104.34213396282746,
-            74.54153390895621
-        ]
+        "unbounded_indices": []
     }
 }

@@ -24,15 +24,12 @@ import gzip
 curr_path = sys.path[0]
 
 import pkg_resources
+# conda install setuptools
 
-data_path_continuous = pkg_resources.resource_filename(
-    "dysts", "data/chaotic_attractors.json"
-)
-data_path_discrete = pkg_resources.resource_filename("dysts", "data/discrete_maps.json")
+data_path_continuous = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/moreSystems/chaotic_attractors.json"
 
 import numpy as np
 
-from .utils import integrate_dyn, standardize_ts
 import importlib
 
 try:
@@ -192,6 +189,7 @@ class BaseDyn:
         tpts, sol = np.array(dataset[self.name]['time']), np.array(dataset[self.name]['values'])
         
         if standardize:
+            """standardize the time series after the computation"""
             sol = standardize_ts(sol)
 
         if return_times:
@@ -206,6 +204,7 @@ class BaseDyn:
     def sample(self, *args,  **kwargs):
         """Sample a trajectory for the dynamical system via numerical integration"""
         return self.make_trajectory(*args, **kwargs)
+    
         
 class DynSys(BaseDyn):
     """
@@ -235,5 +234,4 @@ class DynSys(BaseDyn):
         """Wrapper around right hand side"""
         return self.rhs(X, t)
     
-
 
