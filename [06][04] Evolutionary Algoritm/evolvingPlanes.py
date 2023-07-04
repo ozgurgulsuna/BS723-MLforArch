@@ -37,7 +37,7 @@ from flows import *
 # Parameters ==================================================================================================================#
 
 dt = 0.001
-t = np.arange(0, dt*10000, dt)
+t = np.arange(0, dt*5000, dt)
 
 system_A = "Halvorsen"
 system_B = "Aizawa"
@@ -51,9 +51,9 @@ print_info = True
 
 # Variables ===================================================================================================================#
 
-num_inds = 10
+num_inds = 20
 num_genes = 1
-num_generations = 20
+num_generations = 50
 
 tm_size = 5
 frac_elites = 0.2
