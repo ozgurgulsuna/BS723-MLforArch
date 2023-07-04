@@ -1,7 +1,14 @@
 """
-Various low-dimensional dynamical systems in Python.
+The code provided in this file is based on the dysts Python library, which can be found at the following 
+GitHub repository: https://github.com/williamgilpin/dysts/
+
+In this modified version, various low-dimensional dynamical systems are implemented in Python.
 For flows that occur on unbounded intervals (eg non-autonomous systems),
 coordinates are transformed to a basis where the domain remains bounded
+
+It's important to note that we are not affiliated with the creators of nolds. We have included this file solely 
+to maintain the reproducibility of our benchmark experiments. Therefore, if you intend to use or modify this code, 
+please ensure that you cite the original creators of nolds and comply with their licensing terms.
 
 Requirements:
 + numpy

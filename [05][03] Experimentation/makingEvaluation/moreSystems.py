@@ -73,7 +73,7 @@ system_B = "Aizawa"
 single = 0
 smooth = True
 portal_plane = True
-save = True
+save = False
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/makingEvaluation/chaotic_attractors.json"
 # filename = "chaotic_attractors.json"
@@ -109,10 +109,10 @@ else:
 
 # Initial conditions ==========================================================================================================#
 
-range = 0.1
-x0, y0, z0 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
-x1, y1, z1 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
-x2, y2, z2 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
+rang = 0.1
+x0, y0, z0 = (np.random.rand()*rang-rang/2,np.random.rand()*rang-rang/2,np.random.rand()*rang-rang/2)
+x1, y1, z1 = (np.random.rand()*rang-rang/2,np.random.rand()*rang-rang/2,np.random.rand()*rang-rang/2)
+x2, y2, z2 = (np.random.rand()*rang-rang/2,np.random.rand()*rang-rang/2,np.random.rand()*rang-rang/2)
 
 # a = -1.515980368201647
 # b= -21.35202216446338
@@ -172,7 +172,7 @@ rotated_normal_vector = rotation_r.apply(normal_vector)
 rotated_normal_vector = rotation_theta.apply(rotated_normal_vector)
 rotated_normal_vector = rotation_phi.apply(rotated_normal_vector)
 
-a,b,c = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2]
+# a,b,c = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2]
 
 # a = 0.13266580748480603 
 # b = -0.2785903524283617 
@@ -299,6 +299,51 @@ if save:
     np.savetxt(os.path.join(result_dir, str(uid)+"_Merge6.csv"), Merge6, delimiter=",")
 else:
     pass
+
+# Evaluate the system =========================================================================================================#
+
+from scipy.stats import linregress
+def calculate_lyapunov_exponent(traj1, traj2, dt=1.0):
+    """
+    Calculate the lyapunov exponent of two multidimensional trajectories using
+    simple linear regression based on the log-transformed separation of the
+    trajectories.
+
+    Args:
+        traj1 (np.ndarray): trajectory 1 with shape (n_timesteps, n_dimensions)
+        traj2 (np.ndarray): trajectory 2 with shape (n_timesteps, n_dimensions)
+        dt (float): time step between timesteps
+
+    Returns:
+        float: lyapunov exponent
+    """
+    separation = np.linalg.norm(traj1 - traj2, axis=1)
+    log_separation = np.log(separation)
+    time_vals = np.arange(log_separation.shape[0])
+    slope, intercept, r_value, p_value, std_err = linregress(time_vals, log_separation)
+    lyap = slope / dt
+    return lyap
+
+lyap = calculate_lyapunov_exponent(Merge5, Merge6,dt)
+print("Lyapunov exponent: ", lyap)
+
+
+def lyap_exp(x, y, z, dt, n):
+    lyap = []
+    for i in range(n):
+        print("Iteration: ", i)
+        Merge4 = odeint(merge, (x, y, z), t)
+        Merge5 = odeint(merge, (x+0.0001, y, z), t)
+        lyap.append(calculate_lyapunov_exponent(Merge4, Merge5, dt))
+        x = Merge4[-1, 0]
+        y = Merge4[-1, 1]
+        z = Merge4[-1, 2]
+        print("Lyapunov exponent: ", lyap[-1])
+    return np.mean(lyap)
+
+lyap = lyap_exp(x0, y0, z0, dt, 10)
+
+print(lyap)
 
 # Plot the system =============================================================================================================#
 
