@@ -152,7 +152,7 @@ d=np.random.rand()-0.5
 a = 0
 b = 0
 c = 1
-d = 0
+d = np.random.rand()-0.5
 
 
 
@@ -160,13 +160,10 @@ from scipy.spatial.transform import Rotation
 # Create a rotation matrix with angle theta and axis (k, l, m)
 
 theta = np.random.rand()*np.pi*2
-# theta = np.pi/4
-k = np.random.rand()
-l = np.random.rand()
-m = np.random.rand()
 
-rotation = Rotation.from_rotvec(theta * np.array([k, l, m]))
-
+rotation_r = Rotation.from_rotvec((np.random.rand()*np.pi*2)* np.array([1, 0.01, 0.01]))
+rotation_theta = Rotation.from_rotvec((np.random.rand()*np.pi*2)* np.array([0.01, 1, 0.01]))
+rotation_phi = Rotation.from_rotvec((np.random.rand()*np.pi*2)* np.array([0.01, 0.01, 1]))
                         
 
 # Define a normal vector for the plane
@@ -176,10 +173,15 @@ normal_vector = np.array([a, b, c])
 normal_vector = normal_vector / np.linalg.norm(normal_vector)
 
 # Rotate the normal vector
-rotated_normal_vector = rotation.apply(normal_vector)
+rotated_normal_vector = rotation_r.apply(normal_vector)
+rotated_normal_vector = rotation_theta.apply(rotated_normal_vector)
+rotated_normal_vector = rotation_phi.apply(rotated_normal_vector)
+
 
 # Calculate the new d parameter for the rotated plane
-rotated_d = -np.dot(rotated_normal_vector, rotation.apply([0, 0, 0]))
+rotated_d = -np.dot(rotated_normal_vector, rotation_r.apply([0, 0, 0]))
+rotated_d = -np.dot(rotated_normal_vector, rotation_theta.apply([0, 0, 0]))
+rotated_d = -np.dot(rotated_normal_vector, rotation_phi.apply([0, 0, 0]))
 
 
 # def rotation_matrix(axis, theta):
@@ -208,10 +210,15 @@ rotated_d = -np.dot(rotated_normal_vector, rotation.apply([0, 0, 0]))
 
 a,b,c,d = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2],rotated_d
 
-a = 0.0011078171291329475 
-b = 0.0723127023401218 
-c = 0.9973813943629977 
-d = -0.0
+# a = 0.13266580748480603 
+# b = -0.2785903524283617 
+# c = 0.9512030272545633 
+# d = -0.0
+
+# a = -0.6436990744300384 
+# b = -0.08238938715348168 
+# c = 0.7608307896387901 
+# d = -0.0
 
 
 # Falloff function ============================================================================================================#
@@ -347,6 +354,10 @@ if portal_plane:
 ax.plot3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2], color="black")
 ax.plot3D(Merge5[:, 0], Merge5[:, 1], Merge5[:, 2], color="lightslategray")
 ax.plot3D(Merge6[:, 0], Merge6[:, 1], Merge6[:, 2], color="darkslategray")
+
+plt.xlim(-0.5, 0.5)
+plt.ylim(-0.5, 0.5)
+ax.set_zlim(-0.5, 0.5)
 
 # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
 ax.set_xlabel('x')
