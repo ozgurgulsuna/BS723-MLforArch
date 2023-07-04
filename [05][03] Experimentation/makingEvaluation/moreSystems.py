@@ -72,7 +72,7 @@ system_B = "Aizawa"
 
 single = 0
 smooth = True
-portal_plane = False
+portal_plane = True
 save = True
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/makingEvaluation/chaotic_attractors.json"
@@ -144,10 +144,75 @@ d=np.random.rand()-0.5
 # c = 0.021031560848727704 
 # d = -0.24451814258624305
 
-a = 3.552635476848365 
-b = -0.29887742406083384 
-c = 18.975816390510552 
-d = 0.3901141002916797
+# a = 3.552635476848365 
+# b = -0.29887742406083384 
+# c = 18.975816390510552 
+# d = 0.3901141002916797
+
+a = 0
+b = 0
+c = 1
+d = 0
+
+
+
+from scipy.spatial.transform import Rotation
+# Create a rotation matrix with angle theta and axis (k, l, m)
+
+theta = np.random.rand()*np.pi*2
+# theta = np.pi/4
+k = np.random.rand()
+l = np.random.rand()
+m = np.random.rand()
+
+rotation = Rotation.from_rotvec(theta * np.array([k, l, m]))
+
+                        
+
+# Define a normal vector for the plane
+normal_vector = np.array([a, b, c])
+
+# Normalize the normal vector
+normal_vector = normal_vector / np.linalg.norm(normal_vector)
+
+# Rotate the normal vector
+rotated_normal_vector = rotation.apply(normal_vector)
+
+# Calculate the new d parameter for the rotated plane
+rotated_d = -np.dot(rotated_normal_vector, rotation.apply([0, 0, 0]))
+
+
+# def rotation_matrix(axis, theta):
+#     """
+#     Return the rotation matrix associated with counterclockwise rotation about
+#     the given axis by theta radians.
+#     https://stackoverflow.com/questions/6802577/rotation-of-3d-vector
+#     """
+#     axis = np.asarray(axis)
+#     theta = np.asarray(theta)
+#     axis = axis/np.linalg.norm(axis)
+#     a = np.cos(theta/2.0)
+#     b, c, d = -axis*np.sin(theta/2.0)
+#     aa, bb, cc, dd = a*a, b*b, c*c, d*d
+#     bc, ad, ac, ab, bd, cd = b*c, a*d, a*c, a*b, b*d, c*d
+#     R = np.asarray([[aa+bb-cc-dd, 2*(bc+ad), 2*(bd-ac)],
+#                     [2*(bc-ad), aa+cc-bb-dd, 2*(cd+ab)],
+#                     [2*(bd+ac), 2*(cd-ab), aa+dd-bb-cc]])
+#     return R
+
+# # rotate plane in 3D randomly
+# angle = np.random.rand()*np.pi*2
+# axis = np.random.rand(3)
+# axis = axis/np.linalg.norm(axis)
+# R = rotation_matrix(axis, angle)
+
+a,b,c,d = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2],rotated_d
+
+a = 0.0011078171291329475 
+b = 0.0723127023401218 
+c = 0.9973813943629977 
+d = -0.0
+
 
 # Falloff function ============================================================================================================#
 
@@ -274,7 +339,7 @@ if portal_plane:
     x = np.linspace(-0.5, 0.5, 2)
     y = np.linspace(-0.5, 0.5, 2)
     x, y = np.meshgrid(x, y)
-    eq = -a*x/c - b*y/c  - d/c
+    eq = -(a*x)/c - (b*y)/c  - d/c
     ax.plot_surface(x, y, eq, alpha=0.2)
 
 
