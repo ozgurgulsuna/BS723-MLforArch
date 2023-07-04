@@ -2,11 +2,11 @@
 model_A: Halvorsen(name='Halvorsen', params={'a': 1.4, 'b': 4}, random_state=None)
 model_B: GenesioTesi(name='GenesioTesi', params={'a': 0.44, 'b': 1.1, 'c': 1}, random_state=None)
 plane_parameters: a = 11.677448009175512 b = 10.101709495239735 c = 0.021031560848727704 d = -0.24451814258624305
-other_parameters: t = 100.0, dt = 0.001, smooth = True, saved =True
-initial_conditions: x0= -0.0018477473319102528 y0= 0.003351611164571379 z0= -0.3963165696250647
-initial_conditions: x1= 0.0031153230630294572 y1= -0.0014051514241902238 z1= -0.4017799809167633
-initial_conditions: x2= 0.0013698359597095714 y2= 0.0038075705002159153 z2= -0.39871063315799893
-date_created: 2023-07-04 11:07:39.355732
-uid: 20230704110739
+other_parameters: t = 100.0, dt = 0.001, smooth = True, saved =False
+initial_conditions: x0= 0.023689100193482443 y0= 0.002388163281232293 z0= -0.03668981544223779
+initial_conditions: x1= -0.03720593495561545 y1= -0.024292987098433607 z1= 0.03088185464144337
+initial_conditions: x2= 0.006343559584654733 y2= -0.04398580424183354 z2= 0.003912136502289755
+date_created: 2023-07-04 11:16:42.044186
+uid: 20230704111642
 notes: None
 =================================================================================================================

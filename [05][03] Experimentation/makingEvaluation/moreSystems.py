@@ -73,7 +73,7 @@ system_B = "GenesioTesi"
 single = 0
 smooth = True
 portal_plane = False
-save = True
+save = False
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/makingEvaluation/chaotic_attractors.json"
 # filename = "chaotic_attractors.json"
@@ -107,19 +107,12 @@ else:
         f.close()
 
 
-
-
-
-
-
 # Initial conditions ==========================================================================================================#
-x0,y0,z0 = Normalize((0.1,0.1,0.1),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-x1,y1,z1 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-x2,y2,z2 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052), (0.016690981504353886,-0.054503652638672406,33.21631003781814))
-x0,y0,z0 = Normalize((np.random.rand()-0.5,np.random.rand()-0.5,np.random.rand()-0.5),(136.6145132443005,132.93521309671516,83.11710323466052),  (0.016690981504353886,-0.054503652638672406,33.21631003781814))
 
-# x0,y0,z0 = Normalize((-0.21422356,-0.17935495,14.105516),scale_B, offset_B)
-
+range = 0.1
+x0, y0, z0 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
+x1, y1, z1 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
+x2, y2, z2 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
 
 a=(np.random.rand()-0.5)*50
 b=(np.random.rand()-0.5)*50
@@ -151,9 +144,8 @@ b = 10.101709495239735
 c = 0.021031560848727704 
 d = -0.24451814258624305
 
+# Falloff function ============================================================================================================#
 
-#----------------------------------------------------------#
-# Falloff function
 def falloff(distance):
     return 0.5/(1+(distance*10)**2)
 
@@ -230,26 +222,11 @@ def merge(state,t):
 
         return dx,dy,dz
 
-
-
-
-#----------------------------------------------------------#
-# Solve the systems
-
-# Merge1 = odeint(Merge, (x0, y0, z0), t)
-
-# Merge2 = odeint(Merge, (x1, y1, z1), t)
-
-# Merge3 = odeint(Merge, (x2, y2, z2), t)
-
-# singleass = odeint(single_system, (x0, y0, z0), t)
+# Solve the systems ===========================================================================================================#
 
 Merge4 = odeint(merge, (x0, y0, z0), t)
 Merge5 = odeint(merge, (x1, y1, z1), t)
 Merge6 = odeint(merge, (x2, y2, z2), t)
-
-# Merge2 = odeint(Merge, (x2, y2, z2), t)
-
 
 
 # Save & Print The Tag ========================================================================================================#
@@ -282,94 +259,8 @@ if save:
 else:
     pass
 
-#----------------------------------------------------------#
+# Plot the system =============================================================================================================#
 
-# Plot the system
-
-# print("Plotting the system...")
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(TSUCS1[:, 0], TSUCS1[:, 1], TSUCS1[:, 2])
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
-
-#----------------------------------------------------------#
-
-# Yu-Wang Attractor
-
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(YuWang[:, 0], YuWang[:, 1], YuWang[:, 2])
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
-
-#----------------------------------------------------------#
-
-
-# Plot the system
-# print("Plotting the system...")
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(Merge[:, 0], Merge[:, 1], Merge[:, 2])
-# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
-
-#----------------------------------------------------------#
-
-# Plot the system
-# print("Plotting the system...")
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(myTSUCS1[:, 0], myTSUCS1[:, 1], myTSUCS1[:, 2])
-# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
-
-#----------------------------------------------------------#
-
-
-# # Plot the system
-# print("Plotting the system...")
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(Merge1[:, 0], Merge1[:, 1], Merge1[:, 2])
-# ax.plot3D(Merge3[:, 0], Merge3[:, 1], Merge3[:, 2], color="green")
-# ax.plot3D(Merge2[:, 0], Merge2[:, 1], Merge2[:, 2], color="red")
-# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
-
-
-
-# # Plot the system
-# print("Plotting the system...")
-# plt.figure()
-# ax = plt.axes(projection='3d')
-
-# ax.plot3D(singleass[:, 0], singleass[:, 1], singleass[:, 2])
-# # ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
-# ax.set_xlabel('x')
-# ax.set_ylabel('y')
-# ax.set_zlabel('z')
-# plt.show()
-
-# Plot the system
 print("Plotting the system...")
 plt.figure()
 ax = plt.axes(projection='3d')
