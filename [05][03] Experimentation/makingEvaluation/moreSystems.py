@@ -63,7 +63,7 @@ def Expand(state, scale, offset):
 # Parameters ==================================================================================================================#
 
 dt = 0.001
-t = np.arange(0, dt*100000, dt)
+t = np.arange(0, dt*10000, dt)
 
 # Read Data ===================================================================================================================#
 
@@ -172,7 +172,7 @@ rotated_normal_vector = rotation_r.apply(normal_vector)
 rotated_normal_vector = rotation_theta.apply(rotated_normal_vector)
 rotated_normal_vector = rotation_phi.apply(rotated_normal_vector)
 
-# a,b,c = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2]
+a,b,c = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2]
 
 # a = 0.13266580748480603 
 # b = -0.2785903524283617 
@@ -269,37 +269,6 @@ Merge4 = odeint(merge, (x0, y0, z0), t)
 Merge5 = odeint(merge, (x1, y1, z1), t)
 Merge6 = odeint(merge, (x2, y2, z2), t)
 
-
-# Save & Print The Tag ========================================================================================================#
-date_created = datetime.datetime.now()
-uid = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-
-f = open(logs, "a")
-tag = "================================================================================================================="+"\n"
-tag += "model_A: "+str(model_A)+"\n"
-tag += "model_B: "+str(model_B)+"\n"
-tag += "plane_parameters: a = "+str(a)+" b = "+str(b)+" c = "+str(c)+" d = "+str(d)+"\n"
-tag += "other_parameters: t = "+str(dt*len(t))+", dt = "+str(dt)+", smooth = "+str(smooth)+", saved ="+str(save) +"\n"
-tag += "initial_conditions: x0= "+str(x0)+" y0= "+str(y0)+" z0= "+str(z0)+"\n"
-tag += "initial_conditions: x1= "+str(x1)+" y1= "+str(y1)+" z1= "+str(z1)+"\n"
-tag += "initial_conditions: x2= "+str(x2)+" y2= "+str(y2)+" z2= "+str(z2)+"\n"
-tag += "date_created: "+str(date_created)+"\n"
-tag += "uid: "+str(uid)+"\n"
-tag += "notes: "+str("None")+"\n"
-tag += "================================================================================================================="+"\n"
-print(tag)
-f.write(tag)
-f.close()
-
-# Save the data ===============================================================================================================#
-if save:
-    print("Saving the data...")
-    np.savetxt(os.path.join(result_dir, str(uid)+"_Merge4.csv"), Merge4, delimiter=",")
-    np.savetxt(os.path.join(result_dir, str(uid)+"_Merge5.csv"), Merge5, delimiter=",")
-    np.savetxt(os.path.join(result_dir, str(uid)+"_Merge6.csv"), Merge6, delimiter=",")
-else:
-    pass
-
 # Evaluate the system =========================================================================================================#
 
 from scipy.stats import linregress
@@ -324,9 +293,6 @@ def calculate_lyapunov_exponent(traj1, traj2, dt=1.0):
     lyap = slope / dt
     return lyap
 
-lyap = calculate_lyapunov_exponent(Merge5, Merge6,dt)
-print("Lyapunov exponent: ", lyap)
-
 
 def lyap_exp(x, y, z, dt, n):
     lyap = []
@@ -343,7 +309,37 @@ def lyap_exp(x, y, z, dt, n):
 
 lyap = lyap_exp(x0, y0, z0, dt, 10)
 
-print(lyap)
+# Save & Print The Tag ========================================================================================================#
+date_created = datetime.datetime.now()
+uid = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+
+f = open(logs, "a")
+tag = "================================================================================================================="+"\n"
+tag += "model_A: "+str(model_A)+"\n"
+tag += "model_B: "+str(model_B)+"\n"
+tag += "plane_parameters: a = "+str(a)+" b = "+str(b)+" c = "+str(c)+" d = "+str(d)+"\n"
+tag += "other_parameters: t = "+str(dt*len(t))+", dt = "+str(dt)+", smooth = "+str(smooth)+", saved = "+str(save) +"\n"
+tag += "initial_conditions: x0= "+str(x0)+" y0= "+str(y0)+" z0= "+str(z0)+"\n"
+tag += "initial_conditions: x1= "+str(x1)+" y1= "+str(y1)+" z1= "+str(z1)+"\n"
+tag += "initial_conditions: x2= "+str(x2)+" y2= "+str(y2)+" z2= "+str(z2)+"\n"
+tag += "date_created: "+str(date_created)+"\n"
+tag += "uid: "+str(uid)+"\n"
+tag += "lyapunov_exponent: "+str(lyap)+"\n"
+tag += "================================================================================================================="+"\n"
+print(tag)
+f.write(tag)
+f.close()
+
+# Save the data ===============================================================================================================#
+if save:
+    print("Saving the data...")
+    np.savetxt(os.path.join(result_dir, str(uid)+"_Merge4.csv"), Merge4, delimiter=",")
+    np.savetxt(os.path.join(result_dir, str(uid)+"_Merge5.csv"), Merge5, delimiter=",")
+    np.savetxt(os.path.join(result_dir, str(uid)+"_Merge6.csv"), Merge6, delimiter=",")
+else:
+    pass
+
+
 
 # Plot the system =============================================================================================================#
 
