@@ -152,7 +152,7 @@ d=np.random.rand()-0.5
 a = 0
 b = 0
 c = 1
-d = np.random.rand()-0.5
+d = np.random.rand()-0.25
 
 
 
@@ -179,9 +179,9 @@ rotated_normal_vector = rotation_phi.apply(rotated_normal_vector)
 
 
 # Calculate the new d parameter for the rotated plane
-rotated_d = -np.dot(rotated_normal_vector, rotation_r.apply([0, 0, 0]))
-rotated_d = -np.dot(rotated_normal_vector, rotation_theta.apply([0, 0, 0]))
-rotated_d = -np.dot(rotated_normal_vector, rotation_phi.apply([0, 0, 0]))
+# rotated_d = -np.dot(rotated_normal_vector, rotation_r.apply([0, 0, 0]))
+# rotated_d = -np.dot(rotated_normal_vector, rotation_theta.apply([0, 0, 0]))
+# rotated_d = -np.dot(rotated_normal_vector, rotation_phi.apply([0, 0, 0]))
 
 
 # def rotation_matrix(axis, theta):
@@ -208,7 +208,7 @@ rotated_d = -np.dot(rotated_normal_vector, rotation_phi.apply([0, 0, 0]))
 # axis = axis/np.linalg.norm(axis)
 # R = rotation_matrix(axis, angle)
 
-a,b,c,d = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2],rotated_d
+a,b,c = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2]
 
 # a = 0.13266580748480603 
 # b = -0.2785903524283617 
