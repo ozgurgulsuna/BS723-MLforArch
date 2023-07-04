@@ -73,7 +73,7 @@ system_B = "GenesioTesi"
 single = 0
 smooth = True
 portal_plane = False
-save = False
+save = True
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[05][03] Experimentation/makingEvaluation/chaotic_attractors.json"
 # filename = "chaotic_attractors.json"
@@ -391,7 +391,15 @@ ax.plot3D(Merge6[:, 0], Merge6[:, 1], Merge6[:, 2], color="darkslategray")
 ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('z')
+
+
+if save:
+    plt.savefig(os.path.join(result_dir, str(uid)+".png"))
+else:
+    pass
+
 plt.show()
+
 
 
 
