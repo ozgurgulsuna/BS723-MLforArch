@@ -114,11 +114,6 @@ x0, y0, z0 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.r
 x1, y1, z1 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
 x2, y2, z2 = (np.random.rand()*range-range/2,np.random.rand()*range-range/2,np.random.rand()*range-range/2)
 
-a=(np.random.rand()-0.5)*50
-b=(np.random.rand()-0.5)*50
-c=(np.random.rand()-0.5)*50
-d=np.random.rand()-0.5
-
 # a = -1.515980368201647
 # b= -21.35202216446338
 # c = -5.822262341841345
@@ -152,8 +147,8 @@ d=np.random.rand()-0.5
 a = 0
 b = 0
 c = 1
-d = np.random.rand()-0.25
-
+d = 0
+# d = np.random.rand()*0.25-0.25
 
 
 from scipy.spatial.transform import Rotation
@@ -176,37 +171,6 @@ normal_vector = normal_vector / np.linalg.norm(normal_vector)
 rotated_normal_vector = rotation_r.apply(normal_vector)
 rotated_normal_vector = rotation_theta.apply(rotated_normal_vector)
 rotated_normal_vector = rotation_phi.apply(rotated_normal_vector)
-
-
-# Calculate the new d parameter for the rotated plane
-# rotated_d = -np.dot(rotated_normal_vector, rotation_r.apply([0, 0, 0]))
-# rotated_d = -np.dot(rotated_normal_vector, rotation_theta.apply([0, 0, 0]))
-# rotated_d = -np.dot(rotated_normal_vector, rotation_phi.apply([0, 0, 0]))
-
-
-# def rotation_matrix(axis, theta):
-#     """
-#     Return the rotation matrix associated with counterclockwise rotation about
-#     the given axis by theta radians.
-#     https://stackoverflow.com/questions/6802577/rotation-of-3d-vector
-#     """
-#     axis = np.asarray(axis)
-#     theta = np.asarray(theta)
-#     axis = axis/np.linalg.norm(axis)
-#     a = np.cos(theta/2.0)
-#     b, c, d = -axis*np.sin(theta/2.0)
-#     aa, bb, cc, dd = a*a, b*b, c*c, d*d
-#     bc, ad, ac, ab, bd, cd = b*c, a*d, a*c, a*b, b*d, c*d
-#     R = np.asarray([[aa+bb-cc-dd, 2*(bc+ad), 2*(bd-ac)],
-#                     [2*(bc-ad), aa+cc-bb-dd, 2*(cd+ab)],
-#                     [2*(bd+ac), 2*(cd-ab), aa+dd-bb-cc]])
-#     return R
-
-# # rotate plane in 3D randomly
-# angle = np.random.rand()*np.pi*2
-# axis = np.random.rand(3)
-# axis = axis/np.linalg.norm(axis)
-# R = rotation_matrix(axis, angle)
 
 a,b,c = rotated_normal_vector[0],rotated_normal_vector[1],rotated_normal_vector[2]
 
