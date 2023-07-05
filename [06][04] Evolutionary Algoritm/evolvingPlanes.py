@@ -40,7 +40,7 @@ dt = 0.001
 t = np.arange(0, dt*5000, dt)
 
 system_A = "Halvorsen"
-system_B = "Aizawa"
+system_B = "Rossler"
 
 single = 0
 smooth = True

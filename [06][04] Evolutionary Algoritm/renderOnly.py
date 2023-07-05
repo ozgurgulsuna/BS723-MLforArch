@@ -29,16 +29,16 @@ from flows import *
 
 # Parameters ==================================================================================================================#
 
-dt = 0.001
-t = np.arange(0, dt*50000, dt)
+dt = 0.01
+t = np.arange(0, dt*10000, dt)
 
 system_A = "Halvorsen"
-system_B = "Aizawa"
+system_B = "Rossler"
 
 single = 0
 smooth = True
-portal_plane = True
-save = True
+portal_plane = False
+save = False
 
 
 # Directory ===================================================================================================================#
@@ -89,10 +89,11 @@ c = 1
 d = 0
 # d = np.random.rand()*0.25-0.25
 
-r = 3.6483597569241186
-theta = 3.0677807140397104
-phi = 2.0596846286913753
+r = 0.7108928822911016
 
+theta = 0.2701111537255759
+
+phi = 0.21166722761979148
 # Random rotation =============================================================================================================#
 
 from scipy.spatial.transform import Rotation
@@ -316,6 +317,9 @@ print("Plotting the system...")
 plt.figure()
 ax = plt.axes(projection='3d')
 
+plt.axis('off')
+plt.grid(b=None)
+
 if portal_plane:
     x = np.linspace(-0.5, 0.5, 2)
     y = np.linspace(-0.5, 0.5, 2)
@@ -324,9 +328,13 @@ if portal_plane:
     ax.plot_surface(x, y, eq, alpha=0.2)
 
 
-ax.plot3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2], color="black")
-ax.plot3D(Merge5[:, 0], Merge5[:, 1], Merge5[:, 2], color="lightslategray")
-ax.plot3D(Merge6[:, 0], Merge6[:, 1], Merge6[:, 2], color="darkslategray")
+# ax.plot3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2], color="black")
+# ax.plot3D(Merge5[:, 0], Merge5[:, 1], Merge5[:, 2], color="lightslategray")
+# ax.plot3D(Merge6[:, 0], Merge6[:, 1], Merge6[:, 2], color="darkslategray")
+
+ax.scatter3D(Merge4[:, 0], Merge4[:, 1], Merge4[:, 2], alpha = 0.2,color="maroon",)
+ax.scatter3D(Merge5[:, 0], Merge5[:, 1], Merge5[:, 2], alpha = 0.2, color="indianred")
+ax.scatter3D(Merge6[:, 0], Merge6[:, 1], Merge6[:, 2], alpha = 0.2, color="firebrick")
 
 plt.xlim(-0.5, 0.5)
 plt.ylim(-0.5, 0.5)
