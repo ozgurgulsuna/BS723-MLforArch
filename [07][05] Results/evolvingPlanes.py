@@ -39,7 +39,7 @@ dt = 0.001
 t = np.arange(0, dt*5000, dt)
 
 system_A = "Halvorsen"
-system_B = "Qichen"
+system_B = "QiChen"
 
 single = 0
 smooth = True
@@ -594,7 +594,7 @@ def main():
 
                         # save the figure
                 if save:
-                    plt.savefig(os.path.join(result_dir, str(i)+"planes.png"))
+                    plt.savefig(os.path.join(result_dir, str(i)+"planes.png"), format='png', transparent=True)
                     cc = cc+1
             plt.clf()
 

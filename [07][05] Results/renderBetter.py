@@ -29,11 +29,11 @@ from flows import *
 
 # Parameters ==================================================================================================================#
 
-dt = 0.01
+dt = 0.001
 t = np.arange(0, dt*800*2, dt)
 
 system_A = "Halvorsen"
-system_B = "DoubleGyre"
+system_B = "QiChen"
 
 num_ic = 10
 # dimensions = 3
@@ -105,11 +105,11 @@ theta = np.random.rand()*np.pi*2
 phi = np.random.rand()*np.pi*2
 
 
-r = 4.081274148034642
+r = 5.039466632557828
 
-theta = 2.829504629544527
+theta = 0.3602443888938786
 
-phi = 0.9764342656781309
+phi =3.7965055623811503
 # Random rotation =============================================================================================================#
 
 from scipy.spatial.transform import Rotation
