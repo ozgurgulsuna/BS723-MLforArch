@@ -39,7 +39,7 @@ dt = 0.001
 t = np.arange(0, dt*5000, dt)
 
 system_A = "Halvorsen"
-system_B = "QiChen"
+system_B = "Aizawa"
 
 single = 0
 smooth = True
@@ -52,7 +52,7 @@ print_info = True
 
 num_inds = 20
 num_genes = 1
-num_generations = 20
+num_generations = 50
 
 tm_size = 5
 frac_elites = 0.2
@@ -313,7 +313,7 @@ def evaluate_individual(individual):
     r, theta, phi, dir = individual.genes[0].r, individual.genes[0].theta, individual.genes[0].phi, individual.genes[0].dir 
     a,b,c,d = plane_rotation(0,0,1,0,r,theta,phi)
 
-    fitness = lyap_exp(x0,y0,z0,dt,10)
+    fitness = lyap_exp(x0,y0,z0,dt,20)
     if np.isnan(fitness):
         fitness = -200
     individual.fitness = fitness

@@ -30,10 +30,10 @@ from flows import *
 # Parameters ==================================================================================================================#
 
 dt = 0.001
-t = np.arange(0, dt*800*10, dt)
+t = np.arange(0, dt*800*40, dt)
 
 system_A = "Halvorsen"
-system_B = "QiChen"
+system_B = "Aizawa"
 
 num_ic = 10
 # dimensions = 3
@@ -41,7 +41,7 @@ num_ic = 10
 
 single = 0
 smooth = True
-portal_plane = False
+portal_plane = True
 save = True
 
 color_set = "blue"
@@ -105,11 +105,11 @@ theta = np.random.rand()*np.pi*2
 phi = np.random.rand()*np.pi*2
 
 
-r = 5.039466632557828
+r = 2.8855642127903605
 
-theta = 0.3602443888938786
+theta = 3.0881945947786997
 
-phi =3.7965055623811503
+phi = 5.893221683013124
 # Random rotation =============================================================================================================#
 
 from scipy.spatial.transform import Rotation
@@ -387,8 +387,8 @@ plt.figure()
 ax = plt.axes(projection='3d')
 
 
-plt.axis('off')
-plt.grid(b=None)
+# plt.axis('off')
+# plt.grid(b=None)
 
 # if portal_plane:
 #     x = np.linspace(-0.5, 0.5, 2)
@@ -452,7 +452,7 @@ for i in range(num_ic):
     # ax.scatter3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2],s = 50, alpha = 0.3, color=selected_color, zorder=i, edgecolors='none')
     # ax.scatter3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2],s = 50, alpha = 0.3, color=selected_color, zorder=i, edgecolors='none')
     # ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 0.1, color=selected_color,linewidth=5)
-    ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 1, color=selected_color, linewidth=2, zorder=i)
+    ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 0.5, color=selected_color, linewidth=1, zorder=i)
 
 plt.xlim(-0.5, 0.5)
 plt.ylim(-0.5, 0.5)
