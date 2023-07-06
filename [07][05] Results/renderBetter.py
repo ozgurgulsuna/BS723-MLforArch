@@ -30,7 +30,7 @@ from flows import *
 # Parameters ==================================================================================================================#
 
 dt = 0.001
-t = np.arange(0, dt*800*2, dt)
+t = np.arange(0, dt*800*10, dt)
 
 system_A = "Halvorsen"
 system_B = "QiChen"
@@ -41,7 +41,7 @@ num_ic = 10
 
 single = 0
 smooth = True
-portal_plane = True
+portal_plane = False
 save = True
 
 color_set = "blue"
@@ -166,6 +166,20 @@ def Expand(state, scale, offset):
     z = z + offset_z
 
     return x,y,z
+
+def rotate_points( X, Y, Z, r, theta, phi ):
+    Rx = np.array([[1, 0, 0],
+                [0, np.cos(r), -np.sin(r)],
+                [0, np.sin(r), np.cos(r)]])
+    Ry = np.array([[np.cos(theta), 0, np.sin(theta)],
+                [0, 1, 0],
+                [-np.sin(theta), 0, np.cos(theta)]])
+    Rz = np.array([[np.cos(phi), -np.sin(phi), 0],
+                [np.sin(phi), np.cos(phi), 0],
+                [0, 0, 1]])
+    R = np.dot(Rz, np.dot(Ry, Rx))
+    rotated_points = np.dot(R, np.array([X,Y,Z]))
+    return rotated_points
 
 
 # Falloff function ============================================================================================================#
@@ -373,15 +387,35 @@ plt.figure()
 ax = plt.axes(projection='3d')
 
 
-# plt.axis('off')
-# plt.grid(b=None)
+plt.axis('off')
+plt.grid(b=None)
 
+# if portal_plane:
+#     x = np.linspace(-0.5, 0.5, 2)
+#     y = np.linspace(-0.5, 0.5, 2)
+#     x, y = np.meshgrid(x, y)
+#     eq = -(a*x)/c - (b*y)/c  - d/c
+#     ax.plot_surface(x, y, eq, alpha=0.2)
+
+
+
+
+# fig = plt.figure(figsize=(8,8))
+# ax = plt.axes(projection='3d')
 if portal_plane:
-    x = np.linspace(-0.5, 0.5, 2)
-    y = np.linspace(-0.5, 0.5, 2)
-    x, y = np.meshgrid(x, y)
-    eq = -(a*x)/c - (b*y)/c  - d/c
-    ax.plot_surface(x, y, eq, alpha=0.2)
+    X = np.array([0.5, 0.5, -0.5, -0.5])
+    Y = np.array([0.5, -0.5, -0.5, 0.5])
+    Z = np.array([0, 0, 0, 0])
+
+    X, Y, Z = rotate_points( X, Y, Z, r, theta, phi )
+
+    plt.xlim(-0.5, 0.5)
+    plt.ylim(-0.5, 0.5)
+    ax.set_zlim(-0.5, 0.5)
+    surf1 = ax.plot_trisurf(X, Y, Z, antialiased=True, shade=False, alpha=0.2)
+    # plt.savefig(os.path.join(result_dir, str(i)+"planes.png"), format='png', transparent=True)
+
+
 
 
 
@@ -418,7 +452,7 @@ for i in range(num_ic):
     # ax.scatter3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2],s = 50, alpha = 0.3, color=selected_color, zorder=i, edgecolors='none')
     # ax.scatter3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2],s = 50, alpha = 0.3, color=selected_color, zorder=i, edgecolors='none')
     # ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 0.1, color=selected_color,linewidth=5)
-    ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 1, color=selected_color, linewidth=1, zorder=i)
+    ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 1, color=selected_color, linewidth=2, zorder=i)
 
 plt.xlim(-0.5, 0.5)
 plt.ylim(-0.5, 0.5)

@@ -564,7 +564,7 @@ def main():
             init_fit.append(best.fitness)
             plt.plot(init_fit)
             # plt.draw()
-            plt.title("Fitness Plot from Generation 1 to 10000")
+            plt.title("Fitness Plot with respect to Generation")
             plt.ylabel('Fitness')
             plt.xlabel('Generation')
             if i%print_intervals == 0 and save == True:
