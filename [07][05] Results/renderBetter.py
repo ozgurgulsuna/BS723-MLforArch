@@ -33,16 +33,20 @@ dt = 0.01
 t = np.arange(0, dt*800*2, dt)
 
 system_A = "Halvorsen"
-system_B = "GuckenheimerHolmes"
+system_B = "DoubleGyre"
 
 num_ic = 10
+# dimensions = 3
 
-single = "B"
+
+single = 0
 smooth = True
-portal_plane = False
+portal_plane = True
 save = True
 
-color_set = "red"
+color_set = "blue"
+
+
 # color_set = "red"
 
 
@@ -101,11 +105,11 @@ theta = np.random.rand()*np.pi*2
 phi = np.random.rand()*np.pi*2
 
 
-# r = 0.7108928822911016
+r = 4.081274148034642
 
-# theta = 0.2701111537255759
+theta = 2.829504629544527
 
-# phi = 0.21166722761979148
+phi = 0.9764342656781309
 # Random rotation =============================================================================================================#
 
 from scipy.spatial.transform import Rotation
@@ -369,8 +373,8 @@ plt.figure()
 ax = plt.axes(projection='3d')
 
 
-plt.axis('off')
-plt.grid(b=None)
+# plt.axis('off')
+# plt.grid(b=None)
 
 if portal_plane:
     x = np.linspace(-0.5, 0.5, 2)

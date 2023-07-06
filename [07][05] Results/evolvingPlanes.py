@@ -33,14 +33,13 @@ from scipy.stats import linregress
 from flows import *
 
 
-
 # Parameters ==================================================================================================================#
 
 dt = 0.001
 t = np.arange(0, dt*5000, dt)
 
 system_A = "Halvorsen"
-system_B = "Rossler"
+system_B = "Qichen"
 
 single = 0
 smooth = True
@@ -53,7 +52,7 @@ print_info = True
 
 num_inds = 20
 num_genes = 1
-num_generations = 50
+num_generations = 20
 
 tm_size = 5
 frac_elites = 0.2
@@ -83,7 +82,7 @@ class Gene:
 
 filename = "d:/2022-23/Okul/Dersler/BS723/[07][05] Results/chaotic_attractors.json"
 result_dir = "d:/2022-23/Okul/Dersler/BS723/[07][05] Results/results/"
-output_path = "d:/2022-23/Okul/Dersler/BS723/[07][05] Results/outputs/"+str(num_inds)+"_"+str(num_genes)+"_"+str(tm_size)+"_"+str(frac_elites)+"_"+str(frac_parents)+"_"+str(mutation_prob)+"/"
+output_path = "d:/2022-23/Okul/Dersler/BS723/[07][05] Results/outputs/"+str(system_A)+str(system_B)+str(num_inds)+"_"+str(num_genes)+"_"+str(tm_size)+"_"+str(frac_elites)+"_"+str(frac_parents)+"_"+str(mutation_prob)+"/"
 
 
 if os.path.isdir(result_dir):
@@ -288,6 +287,25 @@ def init_population():
 
 
 
+
+
+def rotate_points( X, Y, Z, r, theta, phi ):
+    Rx = np.array([[1, 0, 0],
+                [0, np.cos(r), -np.sin(r)],
+                [0, np.sin(r), np.cos(r)]])
+    Ry = np.array([[np.cos(theta), 0, np.sin(theta)],
+                [0, 1, 0],
+                [-np.sin(theta), 0, np.cos(theta)]])
+    Rz = np.array([[np.cos(phi), -np.sin(phi), 0],
+                [np.sin(phi), np.cos(phi), 0],
+                [0, 0, 1]])
+    R = np.dot(Rz, np.dot(Ry, Rx))
+    rotated_points = np.dot(R, np.array([X,Y,Z]))
+    return rotated_points
+    
+
+
+
 def evaluate_individual(individual):
     global a,b,c,d
     fitness = 0
@@ -406,14 +424,15 @@ def crossover(parents):
 def mutation(population):
     population = copy.deepcopy(population)
     for individual in population:
-        individual.fitness = -20 # -20 fitness means that not evaluated yet
+        individual.fitness = -20 
+        """-20 fitness means that not evaluated """
         for gene in individual.genes:
             if random.random() < mutation_prob:
                 """guided mutation"""
                 gene.r = gene.r + random.uniform(-np.pi/8,np.pi/8)
                 gene.theta = gene.theta + random.uniform(-np.pi/8,np.pi/8)
                 gene.phi = gene.phi + random.uniform(-np.pi/8,np.pi/8)
-                # gene.dir = gene.dir + ...... # Lets not mutate the direction for now
+                """gene.dir = gene.dir + ......  Lets not mutate the direction for now """
     return population
 
 
@@ -519,7 +538,7 @@ def main():
     if not os.path.exists(output_path):
         os.mkdir(output_path)
     init_fit = []
-    later_fit = []
+    pop_plot = []
     start_time = time.time()
     population = init_population()
     best = population[0]
@@ -550,8 +569,47 @@ def main():
             plt.xlabel('Generation')
             if i%print_intervals == 0 and save == True:
                 plt.savefig(output_path+"mmmmm"+"_fitness.png",dpi=200)
+
             # plt.pause(0.1)
             plt.clf()
+            # plt.figure()
+            fig = plt.figure(figsize=(8,8))
+            ax = plt.axes(projection='3d')
+            cc = 0
+            if i%print_intervals == 0 and save == True: 
+                for ind in population:
+                    r = ind.genes[0].r
+                    theta = ind.genes[0].theta
+                    phi = ind.genes[0].phi
+                    X = np.array([0.5, 0.5, -0.5, -0.5])
+                    Y = np.array([0.5, -0.5, -0.5, 0.5])
+                    Z = np.array([0, 0, 0, 0])
+
+                    X, Y, Z = rotate_points( X, Y, Z, r, theta, phi )
+
+                    plt.xlim(-0.5, 0.5)
+                    plt.ylim(-0.5, 0.5)
+                    ax.set_zlim(-0.5, 0.5)
+                    surf1 = ax.plot_trisurf(X, Y, Z, antialiased=True, shade=False, alpha=0.5)
+
+                        # save the figure
+                if save:
+                    plt.savefig(os.path.join(result_dir, str(i)+"planes.png"))
+                    cc = cc+1
+            plt.clf()
+
+
+
+
+
+
+
+
+
+
+
+
+
         # if i>1000 and i<10000:
         #     later_fit.append(best.fitness)
         #     plt.plot(later_fit)
@@ -597,6 +655,155 @@ def main():
 
 # Run
 best_case = main()
+
+
+
+# population = init_population()
+
+
+
+
+
+
+# # Soft Scatter Plot ===========================================================================================================#
+# print("Plotting the system...")
+# plt.figure()
+# # # plt.figure(figsize=(100,100))
+# ax = plt.axes(projection='3d')
+
+
+
+
+
+
+
+
+
+
+
+# # plt.figure()
+# i = 0
+# for ind in population:
+#     r = ind.genes[0].r
+#     theta = ind.genes[0].theta
+#     phi = ind.genes[0].phi
+#     a,b,c,d = plane_rotation(0,0,1,0,r,theta,phi)
+#     # plt.figure(figsize=(100,100))
+#     # ax = plt.axes(projection='3d')
+#     if portal_plane:
+#         x = np.linspace(-0.5, 0.5, 2)
+#         y = np.linspace(-0.5, 0.5, 2)
+#         x, y = np.meshgrid(x, y)
+#         eq = -(a*x)/c - (b*y)/c  - d/c
+
+#         ax.plot_surface(x, y, eq, alpha=0.5)
+
+#         plt.xlim(-0.5, 0.5)
+#         plt.ylim(-0.5, 0.5)
+#         ax.set_zlim(-0.5, 0.5)
+
+#         # save the figure
+#         if save:
+#             plt.savefig(os.path.join(result_dir, str(i)+"all_2.png"))
+#             i = i+1
+#     # plt.figure().clf()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# a = 0.5
+# b = 0.5
+# c = 0.5
+# VecStart_x = [a,-a,-a,a,a,-a,-a,a,a,-a,-a,a]
+# VecStart_y = [b,b,-b,-b,b,b,-b,-b,b,b,-b,-b]
+# VecStart_z = [c,c,c,c,c,c,c,c,-c,-c,-c,-c]
+
+# VecEnd_x = [-a,-a,a,a,a,-a,-a,a,-a,-a,a,a]
+# VecEnd_y = [b,-b,-b,b,b,b,-b,-b,b,-b,-b,b]
+# VecEnd_z = [c,c,c,c,-c,-c,-c,-c,-c,-c,-c,-c]   
+
+# for i in range(12):
+#     ax.plot([VecStart_x[i], VecEnd_x[i]], [VecStart_y[i],VecEnd_y[i]],[VecStart_z[i],VecEnd_z[i]], color="firebrick", linewidth=2,zorder=9999,alpha=0.5)
+
+# a = 0.5
+# b = 0.5
+# c = 0.5
+# VecStart_x = [a,-a,-a,a,a,-a,-a,a,a,-a,-a,a]
+# VecStart_y = [b,b,-b,-b,b,b,-b,-b,b,b,-b,-b]
+# VecStart_z = [c,c,c,c,c,c,c,c,-c,-c,-c,-c]
+
+# VecEnd_x = [-a,-a,a,a,a,-a,-a,a,-a,-a,a,a]
+# VecEnd_y = [b,-b,-b,b,b,b,-b,-b,b,-b,-b,b]
+# VecEnd_z = [c,c,c,c,-c,-c,-c,-c,-c,-c,-c,-c]   
+
+# for i in range(12):
+#     ax.plot([VecStart_x[i], VecEnd_x[i]], [VecStart_y[i],VecEnd_y[i]],[VecStart_z[i],VecEnd_z[i]], color="teal", linewidth=2,zorder=9999,alpha=0.5)
+
+
+# ax.scatter3D(Merge[:, 0], Merge[:, 1], Merge[:, 2], color="green")
+
+# plt.xlim(-0.5, 0.5)
+# plt.ylim(-0.5, 0.5)
+# ax.set_zlim(-0.5, 0.5)
+
+# ax.set_xlabel('x')
+# ax.set_ylabel('y')
+# ax.set_zlabel('z')
+
+
+# plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Well thats all folks ========================================================================================================#
 # 

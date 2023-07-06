@@ -17,6 +17,17 @@ with open(filename_old, 'r') as read_file:
 
 print(len(data.keys()))
 
+# dims_hist = []
+
+# for key in data.keys():
+#     # append dimensions
+#     dims_hist.append(data[key]["dimension"])
+#     print(data[key]["dimension"])
+
+# plt.hist(dims_hist,bins=np.arange(min(dims_hist), max(dims_hist) +0.75, 0.75), color='teal')
+# plt.xlim(max(dims_hist)+1, min(dims_hist)-1)
+# plt.show()
+
 
 # print the file contents
 for key in data.keys():
