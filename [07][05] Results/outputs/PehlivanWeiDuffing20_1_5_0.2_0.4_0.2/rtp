@@ -1,0 +1,8 @@
+Generation:  49 Best fitness:  0.5535494468220693
+Elapsed time:  941.7275178432465
+>>> best_case.genes[0].r     
+3.0395488845844505
+>>> best_case.genes[0].theta
+3.955464698311421
+>>> best_case.genes[0].phi   
+0.9282052357764814

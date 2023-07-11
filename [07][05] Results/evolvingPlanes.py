@@ -38,14 +38,16 @@ from flows import *
 dt = 0.001
 t = np.arange(0, dt*5000, dt)
 
-system_A = "Halvorsen"
-system_B = "Aizawa"
+system_A = "PehlivanWei"
+system_B = "Duffing"
 
 single = 0
 smooth = True
 portal_plane = True
 save = True
 print_info = True
+
+save_planes = False
 
 
 # Variables ===================================================================================================================#
@@ -573,7 +575,7 @@ def main():
             # plt.pause(0.1)
             plt.clf()
             # plt.figure()
-            fig = plt.figure(figsize=(8,8))
+            # fig = plt.figure(figsize=(8,8))
             ax = plt.axes(projection='3d')
             cc = 0
             if i%print_intervals == 0 and save == True: 
@@ -593,7 +595,7 @@ def main():
                     surf1 = ax.plot_trisurf(X, Y, Z, antialiased=True, shade=False, alpha=0.5)
 
                         # save the figure
-                if save:
+                if save_planes:
                     plt.savefig(os.path.join(result_dir, str(i)+"planes.png"), format='png', transparent=True)
                     cc = cc+1
             plt.clf()

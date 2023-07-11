@@ -1,0 +1,6 @@
+>>> best_case.genes[0].r     
+3.3213113361608464
+>>> best_case.genes[0].theta
+1.3555002406405632
+>>> best_case.genes[0].phi   
+3.310918241659494

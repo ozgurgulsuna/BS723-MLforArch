@@ -499,7 +499,11 @@ for i in range(num_ic):
     # ax.scatter3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2],s = 50, alpha = 0.3, color=selected_color, zorder=i, edgecolors='none')
     # ax.scatter3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2],s = 50, alpha = 0.3, color=selected_color, zorder=i, edgecolors='none')
     # ax.plot3D(outputs[i][:, 0], outputs[i][:, 1], outputs[i][:, 2], alpha = 0.1, color=selected_color,linewidth=5)
-    ax.plot3D(outputs2[i][:, 0], outputs2[i][:, 1], outputs2[i][:, 2], alpha = 1, color=selected_color, linewidth=1, zorder=i)
+    ax.plot3D(outputs2[i][:, 0], outputs2[i][:, 1], outputs2[i][:, 2], alpha = 0.75, color=selected_color, linewidth=1, zorder=i)
+    # ax.plot(outputs2[i][:, 0], outputs2[i][:, 1], alpha = 0.75, color=selected_color, linewidth=1, zorder=i)
+    # ax.plot(outputs2[i][:, 0], outputs2[i][:, 2], alpha = 0.75, color=selected_color, linewidth=1, zorder=i)
+    # ax.plot(outputs2[i][:, 1], outputs2[i][:, 2], alpha = 0.75, color=selected_color, linewidth=1, zorder=i)
+
 
 
 a = 0.5
